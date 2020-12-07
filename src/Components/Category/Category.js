@@ -19,24 +19,28 @@ import './Category.css'
 
 const firstRowData=[
     {
+        category: 'womensdress',
         title : 'Comfy styles for her',
         img : womensdress,
 
 
     },
     {
+        category: 'beautypics',
         title : 'Beauty picks',
         img : beautypics,
 
 
     },
     {
+        category: 'smartproducts',
         title : 'Start your holiday early',
         img : smartproducts,
 
 
     },
     {
+        category: 'bedding',
         title : 'Explore home bedding',
         img : bedding,
 
@@ -46,25 +50,28 @@ const firstRowData=[
 
 const secondRowData=[
     {
+        category: 'electronics',
         title : 'Electronics',
         img : electronics,
 
 
     },
     {
+        category: 'light',
         title : 'Create with strip lights',
         img : light,
 
 
     },
     {
+        category: 'computer',
         title : 'Computers & Accessories',
         img : computer,
 
 
     },
     {
-    
+        category: 'mensdress',
         title : 'Style As Your Wish',
         img : mensdress,
 
@@ -75,19 +82,21 @@ const secondRowData=[
 
 const thirdRowData=[
     {
+        category: 'medical',
         title : 'Take Care Your Health',
         img : medical,
 
 
     },
     {
+        category: 'laptab',
         title : 'Shop Laptops & Tablets',
         img : laptab,
 
 
     },
     {
-      
+        category: 'furniture',
         title : 'Modern Outdoor Furniture',
         img : furniture,
 
@@ -95,7 +104,7 @@ const thirdRowData=[
 
     },
     {
-    
+        category: 'love',
         title : 'Spread Your Love',
         img : love,
 
@@ -115,7 +124,7 @@ const Category = () => {
               <div className='row'>
                  
                     {
-             firstRowData.map(data=><SimpleCard data={data}></SimpleCard>)
+             firstRowData.map(data=><SimpleCard data={data} category={data.category}></SimpleCard>)
 
                     }
               </div>

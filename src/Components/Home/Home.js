@@ -9,8 +9,7 @@ import './Home.css';
 const Home = () => {
     return (
         <div>
-            <NavBar></NavBar>
-
+          
 
             <CarouselItem></CarouselItem>
 
