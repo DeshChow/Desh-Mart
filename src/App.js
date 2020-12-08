@@ -12,44 +12,50 @@ import {
 import Details from './Components/Details/Details';
 import NavBar from './Components/NavBar/NavBar';
 import SideItem from './Components/SideItem/SideItem';
-import { createContext,useState } from 'react';
+import { createContext, useState } from 'react';
+import SingleProductDetails from './Components/SingleProductDetails/SingleProductDetails';
 
 
-export const UserContext=createContext();
+export const UserContext = createContext();
 function App() {
 
-  const [userAction,setUserAction] = useState({
-       
-         showtopic : 'womensdressProducts'
+  const [userAction, setUserAction] = useState({
+
+    showtopic: 'womensdressProducts'
   })
 
   return (
 
-    <UserContext.Provider value={[userAction,setUserAction]}>
-    <Router>
+    <UserContext.Provider value={[userAction, setUserAction]}>
+      <Router>
 
-  <NavBar></NavBar>
-
-
-      <Switch>
+        <NavBar></NavBar>
 
 
-        <Route exact path='/'>
+        <Switch>
 
-         
-          <Home></Home>
 
-        </Route>
-        <Route path='/AdminPanel'>
+          <Route exact path='/'>
 
-          <AdminPanel></AdminPanel>
 
-        </Route>
-        <Route path='/Details'>
-          <div>
+            <Home></Home>
+
+          </Route>
+          <Route path='/AdminPanel'>
+
+            <AdminPanel></AdminPanel>
+
+          </Route>
+          <Route path='/product/:_id/:category'>
+
+           <SingleProductDetails></SingleProductDetails>
+
+          </Route>
+          <Route path='/Details'>
+
 
             <div >
-         <SideItem></SideItem>
+              <SideItem></SideItem>
             </div>
 
 
@@ -60,14 +66,14 @@ function App() {
 
 
             </div>
-          </div>
-
-        </Route>
 
 
-      </Switch>
+          </Route>
 
-    </Router>
+
+        </Switch>
+
+      </Router>
 
     </UserContext.Provider>
 

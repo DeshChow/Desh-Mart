@@ -3,6 +3,7 @@
 import './Details.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
+import ProductItem from '../ProductItem/ProductItem';
 
 const Details = () => {
 
@@ -21,24 +22,14 @@ const Details = () => {
            .then(res=>res.json())
            .then(data=>setProducts(data));
 
-    },[products])
+    },[])
     return (
         <div style={{marginLeft:'300px'}}>
-           <h1>{userAction.showtopic}</h1>
+         
 
               {
 
-                  products.map(pd=><div>
-
-                      <h1>Name : {pd.name}</h1>
-
-                      <p>Price : {pd.price}</p>
-
-
-                      <img style={{ height: '200px' }} src={`data:image/png;base64,${pd.image.img}`} />
-
-                      
-                       </div>)
+                  products.map(pd=><ProductItem pd={pd} key={pd._id} category={userAction.showtopic}></ProductItem>)
               }
 
 
