@@ -23,7 +23,9 @@ const SimpleCard = ({data}) => {
 
 
             setUserAction(newUserAction);
-            history.push('/Details');
+
+            //console.log(userAction.showtopic);
+            history.push('/Details/'+data.category);
       }
     return (
 

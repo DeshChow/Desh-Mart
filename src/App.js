@@ -14,6 +14,9 @@ import NavBar from './Components/NavBar/NavBar';
 import SideItem from './Components/SideItem/SideItem';
 import { createContext, useState } from 'react';
 import SingleProductDetails from './Components/SingleProductDetails/SingleProductDetails';
+import InsertItem from './Components/InsertItem/InsertItem';
+import DeleteItem from './Components/DeleteItem/DeleteItem';
+import UpdateItem from './Components/UpdateItem/UpdateItem';
 
 
 export const UserContext = createContext();
@@ -21,7 +24,7 @@ function App() {
 
   const [userAction, setUserAction] = useState({
 
-    showtopic: 'womensdressProducts'
+    showtopic: 'womensdress'
   })
 
   return (
@@ -46,12 +49,31 @@ function App() {
             <AdminPanel></AdminPanel>
 
           </Route>
-          <Route path='/product/:_id/:category'>
+          <Route path='/AdminInsertItem'>
 
-           <SingleProductDetails></SingleProductDetails>
+            <InsertItem></InsertItem>
 
           </Route>
-          <Route path='/Details'>
+
+          <Route path='/AdminDeleteItem'>
+                
+                <DeleteItem></DeleteItem>
+
+
+          </Route>
+          <Route path='/AdminUpdateItem'>
+                
+                <UpdateItem></UpdateItem>
+
+
+          </Route>
+          <Route path='/product/:_id/:category'>
+
+            <SingleProductDetails></SingleProductDetails>
+
+          </Route>
+          <Route path='/Details/:category'>
+
 
 
             <div >
@@ -59,13 +81,22 @@ function App() {
             </div>
 
 
-            <div >
-
-              <Details></Details>
-
+           
+              <div >
 
 
-            </div>
+           
+                <Details></Details>
+
+
+
+              </div>
+             
+          
+
+
+
+
 
 
           </Route>

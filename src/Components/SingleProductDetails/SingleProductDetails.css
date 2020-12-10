@@ -1,7 +1,7 @@
 .product
 {
     display: flex;
-    border-bottom: 0px solid white!important;
+    border-bottom: 0px solid white;
     margin-bottom: 20px;
     margin-right: 10px;
     padding-bottom: 5px;
