@@ -51,7 +51,9 @@ const SingleProductDetails = () => {
 
             <p>Price : <span className='dollar'>{price}</span></p>
 
-            <p>Description: {itemDetails}</p>
+            <h6>About this item</h6>
+
+            <p>{itemDetails}</p>
 
             </div>
             <div className="col-md-2">
