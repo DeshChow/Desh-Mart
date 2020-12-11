@@ -49,13 +49,13 @@ const AdminPanel = () => {
             <CardDeck>
                 <Card>
                     <Card.Body>
-                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={pendingorder} onClick={() => handleClick('AdminInsertItem')} />
+                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={pendingorder} onClick={() => handleClick('AdminPendingOrder')} />
 
                     </Card.Body>
                 </Card>
                 <Card>
                     <Card.Body>
-                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={insertpic} onClick={() => handleClick('AdminInsertItem')} />
+                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={insertpic} onClick={() => handleClick('AdminOrderHistory')} />
 
                     </Card.Body>
                 </Card>

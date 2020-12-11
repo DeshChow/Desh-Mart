@@ -17,6 +17,10 @@ import SingleProductDetails from './Components/SingleProductDetails/SingleProduc
 import InsertItem from './Components/InsertItem/InsertItem';
 import DeleteItem from './Components/DeleteItem/DeleteItem';
 import UpdateItem from './Components/UpdateItem/UpdateItem';
+import ReviewCart from './Components/ReviewCart/ReviewCart';
+import CheckOut from './Components/CheckOut/CheckOut';
+import PendingOrder from './Components/PendingOrder/PendingOrder';
+import AdminOrderHistory from './Components/AdminOrderHistory/AdminOrderHistory';
 
 
 export const UserContext = createContext();
@@ -56,14 +60,14 @@ function App() {
           </Route>
 
           <Route path='/AdminDeleteItem'>
-                
-                <DeleteItem></DeleteItem>
+
+            <DeleteItem></DeleteItem>
 
 
           </Route>
           <Route path='/AdminUpdateItem'>
-                
-                <UpdateItem></UpdateItem>
+
+            <UpdateItem></UpdateItem>
 
 
           </Route>
@@ -81,24 +85,50 @@ function App() {
             </div>
 
 
-           
-              <div >
 
-
-           
-                <Details></Details>
+            <div >
 
 
 
-              </div>
-             
-          
+              <Details></Details>
 
+
+
+            </div>
 
 
 
 
 
+
+
+
+          </Route>
+
+
+
+          <Route path='/ReviewCart'>
+
+            <ReviewCart></ReviewCart>
+
+
+          </Route>
+          <Route path='/DeshMart/Checkout'>
+
+            <CheckOut></CheckOut>
+
+          </Route>
+
+          <Route path='/AdminPendingOrder'>
+
+            <PendingOrder></PendingOrder>
+
+          </Route>
+
+          <Route path='/AdminOrderHistory'>
+
+
+          <AdminOrderHistory></AdminOrderHistory>
           </Route>
 
 
