@@ -32,3 +32,19 @@
   margin-top: 50px;
     
   }
+
+  .spinner{
+    border: none;
+    border-radius: 0;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .spin{
+      margin-left: 10px;
+      margin-right: 10px;
+  }

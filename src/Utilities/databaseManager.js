@@ -23,7 +23,11 @@ const getFullCart = () => {
         i = keys.length;
 
     while (i--) {
-        values.push(JSON.parse(localStorage.getItem(keys[i])));
+
+        const temp=JSON.parse(localStorage.getItem(keys[i]));
+
+      if(temp.hasOwnProperty('id') && temp.hasOwnProperty('name') && temp.hasOwnProperty('price') && temp.hasOwnProperty('quantity') && temp.hasOwnProperty('category'))
+        values.push(temp);
     }
 
     return (values);

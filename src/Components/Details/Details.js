@@ -33,7 +33,7 @@ const Details = () => {
 
               {
 
-                  products.map(pd=><ProductItem pd={pd} key={pd._id} category={userAction.showtopic}></ProductItem>)
+                  products.map(pd=><ProductItem pd={pd} key={pd._id} category={category}></ProductItem>)
               }
 
 

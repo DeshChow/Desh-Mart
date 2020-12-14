@@ -97,7 +97,7 @@ const thirdRowData=[
     },
     {
         category: 'furniture',
-        title : 'Modern Outdoor Furniture',
+        title : 'Modern Outdoor Tool',
         img : furniture,
 
 

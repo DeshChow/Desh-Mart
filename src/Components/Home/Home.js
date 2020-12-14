@@ -8,18 +8,11 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div>
-          
-
-            <CarouselItem></CarouselItem>
-
-
-            <Category></Category>
-
-          
-
+        <div className="cat">
             
 
+            <CarouselItem></CarouselItem>
+            <Category></Category>
            
         </div>
     );

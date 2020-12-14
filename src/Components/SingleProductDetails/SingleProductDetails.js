@@ -101,12 +101,15 @@ const SingleProductDetails = () => {
                 <p>Price : <span className='dollar'>{price}</span></p>
 
                 <div>
-                    <button role='button' onClick={() => Counter('-')}>-</button>
 
+                    <div>
+                    <button className="spinner" role='button' onClick={() => Counter('-')}>-</button>
 
-                    <span>{curQuantity}</span>
+                    <span className="spin">{curQuantity}</span>
 
-                    <button role='button' onClick={() => Counter('+')}>+</button>
+                    <button className="spinner" role='button' onClick={() => Counter('+')}>+</button>
+                    
+                    </div>
 
                     <br />
 

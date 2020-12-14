@@ -29,15 +29,16 @@ const SimpleCard = ({data}) => {
       }
     return (
 
-    <div className='sty'>
-        <Card  style={{ width: '20rem' }}>
-    <h4>{data.title}</h4>
+    <div >
+        <Card className='sty' style={{ width: '21rem' }}>
+              <h4>{data.title}</h4>
       
-        <Card.Img onClick={handleClick} style={{height : '20rem'}} variant="top" src={data.img} />
-        <Card.Body>
-          <a 
-          onClick={handleClick} style={{color: '#68ABB7' , cursor :'pointer'}} variant="primary">see more</a>
-        </Card.Body>
+              <Card.Img onClick={handleClick} style={{height : '20rem', cursor :'pointer'}} variant="top" src={data.img} />
+
+              <br></br>
+              
+                 <a onClick={handleClick} style={{color: '#68ABB7' , cursor :'pointer'}} variant="primary">see more</a>
+              
       </Card>
 
       </div>
