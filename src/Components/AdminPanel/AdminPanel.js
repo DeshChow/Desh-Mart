@@ -20,7 +20,9 @@ const AdminPanel = () => {
 
 
     return (
-        <div className='container'>
+
+     
+        <div className="cen">
 
             <div className="deck">
                 <CardDeck>
@@ -68,6 +70,8 @@ const AdminPanel = () => {
             </CardDeck>
 
             </div>
+
+           
 
         </div>
     );

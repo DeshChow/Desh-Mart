@@ -32,7 +32,7 @@ const NavBar = () => {
 
             <li>
 
-               <p>{getUserInfo().displayName}</p>
+               <p>{getUserInfo().displayName }</p>
 
             </li>
            <li>

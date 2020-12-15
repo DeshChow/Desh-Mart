@@ -20,7 +20,9 @@ if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
 
-  const provider = new firebase.auth.GoogleAuthProvider();
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+  const fbProvider = new firebase.auth.FacebookAuthProvider();
 
   const history=useHistory();
 
@@ -31,16 +33,19 @@ const Login = () => {
     
   });
 
+
+    const [loginUser,setLoginUser]=useState({});
+
   const handleGoogleSignIn = () => {
 
 
 
-    firebase.auth().signInWithPopup(provider)
+    firebase.auth().signInWithPopup(googleProvider)
       .then(result => {
 
-        const { displayName, photoURL, email } = result.user;
+        const { displayName, emailVerified, email } = result.user;
 
-        InsertUserInfo( { displayName, photoURL, email });
+        InsertUserInfo( { displayName, emailVerified, email });
 
         history.push('/home');
 
@@ -64,10 +69,44 @@ const Login = () => {
 
   }
 
+  const handleFbSignIn=()=>{
+ 
+    firebase.auth().signInWithPopup(fbProvider).then(function(result) {
+     
+      var token = result.credential.accessToken;
+     
+
+      const { displayName, emailVerified, email } = result.user;
+
+        InsertUserInfo( { displayName, emailVerified, email });
+
+        history.push('/home');
+
+        window.location.reload(false);
+ 
+ 
+           
+ 
+ 
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+
+
+      console.log(2,error);
+      // ...
+    });
+    
+  }
 
 
 
-  const handleBlur = (event) => {
+  const handleBlurSignUp = (event) => {
  
  
     let isFieldValid = true;
@@ -110,6 +149,16 @@ const Login = () => {
  
   }
 
+  const handleBlurSignIn=(event)=>
+  {
+    const newUserInfo = { ...loginUser };
+ 
+      newUserInfo[event.target.name] = event.target.value;
+
+ 
+      setLoginUser(newUserInfo);
+  }
+
   const signupForm=(e)=>
   {
 
@@ -117,16 +166,13 @@ const Login = () => {
 
     if (userInformation.displayName && userInformation.email && userInformation.password) {
 
-      console.log('dsfsdfsdf')
+     
       firebase.auth().createUserWithEmailAndPassword(userInformation.email, userInformation.password)
         .then(res => {
 
        
- 
-        
-          updateUserName(userInformation.name,res)
-
-        
+          updateUserName(userInformation.displayName)
+          
 
         
  
@@ -146,7 +192,7 @@ const Login = () => {
 
   }
 
-  const ChangeForm=()=>
+  const ChangeSignUpForm=()=>
   {
     
     const container = document.getElementById('container');
@@ -155,15 +201,21 @@ const Login = () => {
   }
 
 
-  const updateUserName = (name,res) => {
+  function updateUserName(name) {
  
     var user = firebase.auth().currentUser;
+
  
     user.updateProfile({
       displayName: name,
  
     }).then(function () {
-       console.log('Update Successfully',res);
+       alert('You Are Successfully Registered');
+
+       ChangeSignInForm();
+
+
+      
     }).catch(function (error) {
       console.log(error);
     });
@@ -173,10 +225,44 @@ const Login = () => {
  
   }
 
+  
+
  
-  const signinForm = () => {
+  const ChangeSignInForm = () => {
     const container = document.getElementById('container');
     container.classList.remove("right-panel-active");
+  }
+
+
+  const signinForm=(e)=>
+  {
+          
+       if(loginUser.emailSignIn && loginUser.passwordSignIn)
+       {
+           console.log('hamaisi sign in');
+
+
+           firebase.auth().signInWithEmailAndPassword(loginUser.emailSignIn,loginUser.passwordSignIn)
+           .then(result=>
+            {
+
+              const { displayName, emailVerified, email } = result.user;
+
+              InsertUserInfo( { displayName, emailVerified, email });
+      
+              history.push('/home');
+      
+              window.location.reload(false);
+                  
+            })
+            .catch(err=>
+              {
+                alert(err);
+              })
+  
+       }
+
+       e.preventDefault();
   }
 
 
@@ -193,33 +279,33 @@ const Login = () => {
         
           <div className="container" id="container">
             <div className="form-container sign-up-container">
-              <form >
-                <h1>Create Account</h1>
+              <form className="Test" >
+                <h1 className="Test">Create Account</h1>
                 <div className="social-container">
-                  <a  href="" className="social"><img src={facebook} className="fab fa-facebook-f" /></a>
-                  <a onClick={handleGoogleSignIn} href="#" className="social"><img src={google} className="fab fa-google-plus-g" /></a>
-                  <a href="#" className="social"><img className="fab fa-linkedin-in" /></a>
+                  <a className="Test" onClick={handleFbSignIn} className="social"><img src={facebook} className="fab fa-facebook-f" /></a>
+                  <a className="Test" onClick={handleGoogleSignIn} className="social"><img src={google} className="fab fa-google-plus-g" /></a>
+                  <a className="Test" className="social"><img className="fab fa-linkedin-in" /></a>
                 </div>
-                <span>or use your email for registration</span>
-                <input onBlur={handleBlur} name='displayName'  type="text" placeholder="Name" required/>
-                <input onBlur={handleBlur}  name='email'  type="email" placeholder="Email" required />
-                <input onBlur={handleBlur}  name='password' type="password" placeholder="Password"  required />
-                <button  onClick={signupForm}>Sign Up</button>
+                <span className="Test">or use your email for registration</span>
+                <input className="Test" onBlur={handleBlurSignUp} name='displayName'  type="text" placeholder="Name" required/>
+                <input className="Test" onBlur={handleBlurSignUp}  name='email'  type="email" placeholder="Email" required />
+                <input className="Test" onBlur={handleBlurSignUp}  name='password' type="password" placeholder="Password"  required />
+                <button className="Test" onClick={signupForm}>Sign Up</button>
               </form>
             </div>
             <div className="form-container sign-in-container">
-              <form >
-                <h1>Sign in</h1>
+              <form className="Test">
+                <h1 className="Test">Sign in</h1>
                 <div className="social-container">
-                  <a href="#" className="social"><img src={facebook} className="fab fa-facebook-f" /></a>
-                  <a onClick={handleGoogleSignIn} href="#" className="social"><img src={{google}} className="fab fa-google-plus-g" /></a>
-                  <a href="#" className="social"><img className="fab fa-linkedin-in" /></a>
+                  <a className="Test" onClick={handleFbSignIn} className="social"><img src={facebook} className="fab fa-facebook-f" /></a>
+                  <a className="Test" onClick={handleGoogleSignIn} className="social"><img src={{google}} className="fab fa-google-plus-g" /></a>
+                  <a  className="Test" className="social"><img className="fab fa-linkedin-in" /></a>
                 </div>
-                <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <span className="Test">or use your account</span>
+                <input className="Test" onBlur={handleBlurSignIn} name='emailSignIn' type="email" placeholder="Email" required />
+                <input className="Test" onBlur={handleBlurSignIn} name='passwordSignIn' type="password" placeholder="Password" required/>
+                <a className="Test" >Forgot your password?</a>
+                <button className="Test" onClick={signinForm}>Sign In</button>
               </form>
             </div>
 
@@ -228,13 +314,13 @@ const Login = () => {
               <div className="overlay">
                 <div className="overlay-panel overlay-left">
                   <img src={google} />
-                  <p>Welcome back! To keep connected with us please login with your personal info</p>
-                  <button className="ghost" id="signIn" onClick={signinForm}>Sign In</button>
+                  <p className="Test">Welcome back! To keep connected with us please login with your personal info</p>
+                  <button  className="ghost Test" id="signIn" onClick={ChangeSignInForm}>Sign In</button>
                 </div>
                 <div className="overlay-panel overlay-right">
                   <img src={google} />
-                  <p>Hello! Enter your personal details and start journey with us</p>
-                  <button className="ghost" id="signUp" onClick={ChangeForm}>Sign Up</button>
+                  <p className="Test">Hello! Enter your personal details and start journey with us</p>
+                  <button  className="ghost Test" id="signUp" onClick={ChangeSignUpForm}>Sign Up</button>
                 </div>
               </div>
             </div>

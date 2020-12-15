@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import './InsertItem.css';
 
 const InsertItem = () => {
 
@@ -72,8 +73,8 @@ const InsertItem = () => {
     }
     return (
 
-        <section>
-            <div className='container'>
+        <section className='cen'>
+            <div >
 
 
                 <form onSubmit={handleSubmit}>

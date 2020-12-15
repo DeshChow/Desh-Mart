@@ -1,3 +1,10 @@
 .deck{
     margin-top: 50px;
+   
+}
+
+.cen{
+    margin: auto;
+    width: 70%;
+    padding: 10px;
 }

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import './DeleteItem.css';
+
 const DeleteItem = () => {
 
 
@@ -48,7 +50,7 @@ const DeleteItem = () => {
             })
     }
     return (
-        <div className='container'>
+        <div className='cen'>
 
             <h1>deleted</h1>
 
