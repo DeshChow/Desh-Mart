@@ -28,7 +28,7 @@ const Details = () => {
 
     },[products])
     return (
-        <div style={{marginLeft:'300px'}}>
+        <div style={{marginLeft:'300px'}} className="mar">
          
 
               {

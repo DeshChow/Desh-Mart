@@ -51,6 +51,8 @@ const Login = () => {
 
         window.location.reload(false);
 
+        console.log(result)
+
 
       })
       .then(err => console.log(err));

@@ -29,7 +29,7 @@ const SimpleCard = ({data}) => {
       }
     return (
 
-    <div >
+      <div  >
         <Card className='sty' style={{ width: '21rem' }}>
               <h4>{data.title}</h4>
       
@@ -41,7 +41,7 @@ const SimpleCard = ({data}) => {
               
       </Card>
 
-      </div>
+     </div>
 
 
 

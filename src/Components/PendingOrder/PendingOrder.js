@@ -28,8 +28,6 @@ const PendingOrder = () => {
 
     return (
         <div>
-           <h1>Hello</h1>
-
 
            {
                orders.map(order=><SinglePendingOrder order={order} collection="orders"></SinglePendingOrder>)

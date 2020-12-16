@@ -19,7 +19,6 @@ const AdminOrderHistory = () => {
     },[])
     return (
         <div>
-            <h1>history</h1>
             {
                orderHistory.map(order=><SinglePendingOrder order={order} collection="orderHistory"></SinglePendingOrder>)
            }

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Card } from 'react-bootstrap';
 import SinglePendingOrderInner from '../SinglePendingOrderInner/SinglePendingOrderInner';
+import './SinglePendingOrder.css';
+import orderback from '../../images/orderback.jpg';
 
 const SinglePendingOrder = ({ order ,collection}) => {
 
@@ -39,45 +42,33 @@ const SinglePendingOrder = ({ order ,collection}) => {
 
 
     return (
-        <div style={{margin:'40px'}}>
-            <div style={{margin:'20px'}}>
-              <h1>Name : {name}</h1>
+        <div className="full-form" >
 
+            <Card  style={{ width: '40rem',height:'15rem' }}  className="left-form">
+
+            
+              <h1>Name : {name}</h1>
                 <h2>Email :{email}</h2>
 
                 <p>Address :{address}</p>
+            
+            </Card>
+            <div style={{width: '10px'}}>
 
             </div>
 
+            <Card className="right-form">
 
-            <div>
-
-              
-
-                {
-
-
-                      
-
+             {
                     Cart.map(cart=><SinglePendingOrderInner cart={cart} key={cart.id}></SinglePendingOrderInner>)
-
-
-                  
-
-
                 }
-
             <h2>Total Price : {TotalPrice}</h2>
 
-
-            <button onClick={DeleteOrder}>DELETE This ORDER</button>
-
-
-                
-
-
+            
+            <div className="ordercontainer">
+            <button onClick={DeleteOrder} className="ordertest">DELETE</button >
             </div>
-
+            </Card>
           
         </div>
     );

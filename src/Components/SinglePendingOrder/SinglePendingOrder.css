@@ -1,0 +1,35 @@
+.full-form{
+    display: flex;
+    margin: 5px 5px 20px 5px;
+}
+.right-form{
+    width: 100%;
+    background-color: #BCE7E1;
+    color: black
+}
+.left-form{
+    width: 100%;
+    border-right: 1px solid gray;
+    background-color: #EED0CA
+    
+}
+
+button.ordertest{
+    border-radius: 20px;
+	border: 1px solid red;
+	background-color: red;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    width: 20%;
+}
+
+.ordercontainer{
+    text-align: center;
+    margin-bottom: 10px;
+}
+

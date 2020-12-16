@@ -16,6 +16,7 @@ import laptab from '../../images/laptab.jpg'
 import furniture from '../../images/furniture.jpg'
 
 import './Category.css'
+import UserReview from '../UserReview/UserReview';
 
 const firstRowData=[
     {
@@ -115,13 +116,9 @@ const thirdRowData=[
 
 const Category = () => {
     return (
-       <section>
-
-
-        <div >
-
-
-              <div className='row'>
+       <section >
+        
+              <div className='row categorycontainer'>
                  
                     {
              firstRowData.map(data=><SimpleCard data={data} category={data.category}></SimpleCard>)
@@ -129,7 +126,7 @@ const Category = () => {
                     }
               </div>
 
-              <div className='row'>
+              <div className='row categorycontainer'>
                  
                  {
           secondRowData.map(data=><SimpleCard data={data}></SimpleCard>)
@@ -138,25 +135,13 @@ const Category = () => {
            </div>
 
            
-           <div className='row'>
+           <div className='row categorycontainer'>
                  
                  {
          thirdRowData.map(data=><SimpleCard data={data}></SimpleCard>)
 
                  }
            </div>
-
-
-
-        </div>
-
-            
-
-
-
-
-
-
 
 
        </section>

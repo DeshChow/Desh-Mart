@@ -63,7 +63,7 @@ const AdminPanel = () => {
                 </Card>
                 <Card>
                     <Card.Body>
-                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={insertpic} onClick={() => handleClick('AdminInsertItem')} />
+                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={insertpic} onClick={() => handleClick('AdminPendingReview')} />
 
                     </Card.Body>
                 </Card>

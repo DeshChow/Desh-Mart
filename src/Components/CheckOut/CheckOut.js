@@ -1,12 +1,15 @@
 import React,{useState,useEffect} from 'react';
 
 import {  getFullCart,ClearCart, DeleteItem, InsertItem } from '../../Utilities/databaseManager';
+import { getUserInfo } from '../../Utilities/SessionData';
 
 const CheckOut = () => {
 
     
 
         const [info, setInfo] = useState({});
+
+        const [loginUser,setLoginUser]=useState({});
        
     
         //const [products, setProducts] = useState([]);
@@ -17,6 +20,12 @@ const CheckOut = () => {
             newInfo[e.target.name] = e.target.value;
             setInfo(newInfo);
         }
+
+        useEffect(() => {
+
+            setLoginUser(getUserInfo());
+          
+        }, []);
     
       
     
@@ -86,12 +95,12 @@ const CheckOut = () => {
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input onBlur={handleBlur} type="text" class="form-control" name='email' id="exampleInputEmail1" placeholder="Email" />
+                        <input onBlur={handleBlur} type="text" defaultValue={loginUser.email} class="form-control" name='email' id="exampleInputEmail1" placeholder="Email" />
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputName1">Name</label>
-                        <input onBlur={handleBlur} type="text" class="form-control" name="name" placeholder="Name" />
+                        <input onBlur={handleBlur} type="text" defaultValue={loginUser.displayName} class="form-control" name="name" placeholder="Name" />
 
                     </div>
 

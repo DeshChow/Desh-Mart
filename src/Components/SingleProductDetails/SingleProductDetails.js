@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import { useHistory, useParams } from 'react-router-dom';
-import { ClearCart, DeleteItem, InsertItem } from '../../Utilities/databaseManager';
+import { ClearCart, DeleteItem, getFullCart, InsertItem } from '../../Utilities/databaseManager';
+import OrderSummaryDetails from '../OrderSummaryDetails/OrderSummaryDetails';
 import './SingleProductDetails.css';
 
 
@@ -10,24 +11,27 @@ const SingleProductDetails = () => {
     const { _id, category } = useParams();
 
 
-    console.log(_id, category);
+    // console.log(_id, category);
 
     const [product, setProduct] = useState({});
 
-    const history=useHistory();
+    const history = useHistory();
 
-    const { name, brand, color, madeIn, price, itemDetails,quantity } = product;
+    const { name, brand, color, madeIn, price, itemDetails, quantity } = product;
 
     console.log(product);
 
-    const [curQuantity,setCurQuantity]=useState(1);
+    const [curQuantity, setCurQuantity] = useState(1);
+
+    const [cartDetails, setCartDetails] = useState([]);
+
+   
 
 
-    const Counter=(now)=>
-    {
-        if(now=='-')setCurQuantity(curQuantity-1);
+    const Counter = (now) => {
+        if (now == '-') setCurQuantity(curQuantity - 1);
 
-        else setCurQuantity(curQuantity+1);
+        else setCurQuantity(curQuantity + 1);
     }
 
 
@@ -37,48 +41,76 @@ const SingleProductDetails = () => {
         fetch('http://localhost:5000/product/' + _id + '/' + category)
             .then(res => res.json())
             .then(data => setProduct(data));
+
+
+        setCartDetails(getFullCart());
+
+
+
+
+
+
+
+
     }, [_id]);
 
-    
+    //
 
-    const ConvertToNumber=(str)=>
-    {
+   
+
+
+
+
+
+
+
+
+    const ConvertToNumber = (str) => {
+
         return parseInt(str.substring(1));
     }
-      
 
-    const AddToCart=()=>
-    {  
 
-         let value=
-         {
-             id : _id,
+    const AddToCart = () => {
 
-             name:name,
+        let value =
+        {
+            id: _id,
 
-             price : ConvertToNumber(price)*curQuantity,
+            name: name,
 
-             quantity:curQuantity,
+            price: ConvertToNumber(price) * curQuantity,
 
-             category:category,
+            quantity: curQuantity,
 
-             
-         };
-        
-          InsertItem(_id,value);
+            category: category,
+
+
+        };
+
+        InsertItem(_id, value);
+
+        setCartDetails(getFullCart());
+
+
+
 
     }
 
-    const Review=()=>
-    {
-          history.push('/ReviewCart');
+    const Review = () => {
+        history.push('/ReviewCart');
     }
 
 
-  
+
+
+
+
+
+
 
     return (
-        <div className="product row">
+        <div className="singleproduct row">
 
             <div className="col-md-6 center">
 
@@ -88,7 +120,7 @@ const SingleProductDetails = () => {
 
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-4 itemStyle">
 
                 <h4 className='product-name' >{name}</h4>
 
@@ -103,35 +135,38 @@ const SingleProductDetails = () => {
                 <div>
 
                     <div>
-                    <button className="spinner" role='button' onClick={() => Counter('-')}>-</button>
+                        <button className="spinner" role='button' onClick={() => Counter('-')}>-</button>
 
-                    <span className="spin">{curQuantity}</span>
+                        <span className="spin">{curQuantity}</span>
 
-                    <button className="spinner" role='button' onClick={() => Counter('+')}>+</button>
-                    
+                        <button className="spinner" role='button' onClick={() => Counter('+')}>+</button>
+
                     </div>
 
                     <br />
 
-                    <button onClick={AddToCart}>Add to Cart</button>
+                    {product.name ? <button onClick={AddToCart}>Add to Cart</button> : <span></span>}
                 </div>
 
                 <h6>About this item</h6>
 
-               
+
 
                 <p>{itemDetails}</p>
 
             </div>
             <div className="col-md-2">
-                <p>I am cart</p>
 
-                <button onClick={Review}>Review Your Cart</button>
+
+              <OrderSummaryDetails cartDetails={cartDetails}></OrderSummaryDetails>
+
+              <button onClick={Review}>Review Your Cart</button>
 
             </div>
 
 
         </div>
+
     );
 };
 

@@ -22,6 +22,8 @@ import CheckOut from './Components/CheckOut/CheckOut';
 import PendingOrder from './Components/PendingOrder/PendingOrder';
 import AdminOrderHistory from './Components/AdminOrderHistory/AdminOrderHistory';
 import Login from './Components/Login/Login';
+import AdminPendingReview from './Components/AdminPendingReview/AdminPendingReview';
+import ReviewShow from './Components/ReviewShow/ReviewShow';
 
 
 export const UserContext = createContext();
@@ -123,7 +125,7 @@ function App() {
           </Route>
           <Route path='/DeshMart/Login'>
 
-           <Login></Login>
+            <Login></Login>
 
 
           </Route>
@@ -144,6 +146,19 @@ function App() {
 
             <AdminOrderHistory></AdminOrderHistory>
           </Route>
+
+          <Route path='/AdminPendingReview'>
+
+
+           <AdminPendingReview></AdminPendingReview>
+          </Route>
+
+          <Route path='/ReviewShow'>
+
+
+             <ReviewShow></ReviewShow>
+</Route>
+
 
 
         </Switch>

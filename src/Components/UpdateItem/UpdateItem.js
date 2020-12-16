@@ -47,7 +47,7 @@ const UpdateItem = () => {
 
 
     return (
-        <div className='container'>
+        <div className='cen'>
 
             <h1>Update</h1>
 

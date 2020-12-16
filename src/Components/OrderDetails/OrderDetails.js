@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {  getFullCart,ClearCart, DeleteItem, InsertItem } from '../../Utilities/databaseManager';
+import './OrderDetails.css'
 const OrderDetails = ({ order }) => {
 
 
-    const { name, quantity, price,id } = order;
+    const { name, quantity, price,id,category } = order;
 
 
     const RemoveItem=()=>
@@ -15,8 +17,10 @@ const OrderDetails = ({ order }) => {
     }
 
     return (
-        <div style={{margin:'30px'}}>
-            <h1>Name :{name}</h1>
+        <div className="cell">
+
+
+          <h4 className='product-name'><Link to={'/product/'+id+'/'+category}>{name}</Link></h4><br/>
 
             <h2>Quanitity : {quantity}</h2>
 
