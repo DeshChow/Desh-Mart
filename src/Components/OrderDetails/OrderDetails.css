@@ -1,3 +1,46 @@
 .cell{
     margin: 30px;
 }
+
+.revcard{
+    margin: 20px 5px 0px 5px;
+    border: 2px solid  white;
+    background-color: #fff;
+	border-radius: 10px;
+    box-shadow: 0 7px 14px rgba(0,0,0,0.25), 
+    0 5px 5px rgba(0,0,0,0.22);
+    height: 250px;
+}
+
+a.revhov:hover{
+    color: #007bff !important;
+}
+
+.removebtn{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top: 80px;
+}
+
+button.removebtn{
+    border: 1px solid #fa3e3e;
+    padding: 4px 14px;
+    background-color: #fa3e3e;
+    color: Black;
+    flex: right;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: tahoma;
+    border-radius: 50px;
+    height: 35px;
+    width: 100px;
+    color: white
+  }
+  
+  button.removebtn:focus{
+     outline: none !important;
+  }

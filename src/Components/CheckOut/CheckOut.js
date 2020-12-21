@@ -2,6 +2,9 @@ import React,{useState,useEffect} from 'react';
 
 import {  getFullCart,ClearCart, DeleteItem, InsertItem } from '../../Utilities/databaseManager';
 import { getUserInfo } from '../../Utilities/SessionData';
+import {AiFillTag} from "react-icons/ai";
+import './CheckOut.css';
+import BodyClassName from 'react-body-classname';
 
 const CheckOut = () => {
 
@@ -87,10 +90,14 @@ const CheckOut = () => {
 
     
     return (
+         <BodyClassName className="backcolr">
         <section>
-            <div className='container'>
+            <div className='container' style={{backgroundColor: 'powderblue'}}>
+            
+            <span><AiFillTag size="3rem" style={{color:'orange', marginTop: '-25px', marginLeft: '250px'}}/>
+            <span  style={{ 'fontFamily': 'cursive', 'fontSize': '2rem'}}><b className="logg">D</b>esh<b className="logg">M</b>art</span></span>
 
-
+            <div style={{margin: '30px'}}>
                 <form onSubmit={handleSubmit}>
 
                     <div class="form-group">
@@ -117,13 +124,15 @@ const CheckOut = () => {
                     </div>
 
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button className="sub" type="submit">Submit</button>
                 </form>
-
+            </div>
 
             </div>
 
         </section>
+        </BodyClassName>
+        
     );
 };
 

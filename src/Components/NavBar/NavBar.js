@@ -3,6 +3,8 @@ import './NavBar.css';
 import icon from '../../images/icon.png'
 import { useHistory } from 'react-router-dom';
 import { ClearUserInfo, InsertUserInfo,getUserInfo } from '../../Utilities/SessionData';
+import {AiFillTag} from "react-icons/ai";
+
 
 const NavBar = () => {
 
@@ -16,7 +18,7 @@ const NavBar = () => {
  
     return (
         <nav style={{'cursor':'pointer'}}  className="navbar navbar-expand-lg navbar-light  backColor my-nav">
-        <a onClick={()=>changeRoute('home')} className="navbar-brand namestyle" style={{ 'fontFamily': 'cursive', cursor : 'pointer'}}><b className="log">D</b>eshMart</a>
+        <a onClick={()=>changeRoute('home')} className="navbar-brand namestyle" style={{ 'fontFamily': 'cursive', cursor : 'pointer'}}><AiFillTag style={{color:'tomato'}}/><b className="log">D</b>esh<b className="log">M</b>art</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

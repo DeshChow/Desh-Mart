@@ -1,13 +1,29 @@
 #contactus{
     height: 100%;
-    background-color: #fceae8;
-
-    margin-left: 100px;
-
-    margin-right: 100px;
-    padding: 20px;
+    background: linear-gradient(to right, #FF416C, #FF4B2B);
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 60px;
+    padding: 30px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    color: white;
+    font-family: cursive;
 }
 #contactus h6{
     color: gray;
 }
 
+button.reviewbtn{
+    border-radius: 20px;
+    border: 1px solid red;
+    background-color:rgb(73, 75, 73);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    width: 10%;
+    height: 40px;
+}

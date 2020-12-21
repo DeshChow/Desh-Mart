@@ -60,10 +60,10 @@ const UserReview = () => {
 
                     <div class="form-group">
                         <label for="exampleInputitemreview1"></label>
-                        <textarea onBlur={handleBlur} class="form-control" name="review" rows="10" placeholder='Write Your Review'></textarea>
+                        <textarea onBlur={handleBlur} class="form-control" name="review" rows="07" placeholder='Drop Your Review Here'></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="reviewbtn">Submit</button>
 
                 </form>
 

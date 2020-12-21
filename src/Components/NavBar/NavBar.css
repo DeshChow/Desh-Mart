@@ -1,6 +1,6 @@
 .backColor
 {
-    /*background-color: rgb(243, 99, 99);*/
+
    background-color: rgba(115,210,230);
 
     color : white;
@@ -9,3 +9,5 @@
     color: tomato;
     font-size: 20px;
 }
+
+

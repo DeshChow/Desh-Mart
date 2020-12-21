@@ -24,6 +24,7 @@ import AdminOrderHistory from './Components/AdminOrderHistory/AdminOrderHistory'
 import Login from './Components/Login/Login';
 import AdminPendingReview from './Components/AdminPendingReview/AdminPendingReview';
 import ReviewShow from './Components/ReviewShow/ReviewShow';
+import FootItem from './Components/FootItem/FootItem';
 
 
 export const UserContext = createContext();
@@ -163,7 +164,11 @@ function App() {
 
         </Switch>
 
+       
       </Router>
+
+    
+
 
     </UserContext.Provider>
 

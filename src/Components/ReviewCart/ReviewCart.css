@@ -11,3 +11,52 @@
     margin-top: 30px;
     border-left: 1px solid gray;
 }
+
+button.clearcartbtn{
+    border: 1px solid #fa3e3e;
+    padding: 4px 14px;
+    background-color: #fa3e3e;
+    color: black;
+    flex: right;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: tahoma;
+    border-radius: 50px;
+    height: 35px;
+    width: 200px;
+    margin-left: 20px;
+  }
+
+  button.clearcartbtn:focus{
+    outline: none !important;
+ }
+
+ button.proceedcartbtn{
+    border: 1px solid rgb(128, 209, 7);;
+    padding: 4px 14px;
+    background-color: rgb(128, 209, 7);
+    color: white;
+    flex: right;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: tahoma;
+    border-radius: 50px;
+    height: 35px;
+    width: 200px;
+    margin-left: 20px;
+  }
+
+  button.proceedcartbtn:focus{
+    outline: none !important;
+ }
+
+ .emptylist{
+    padding: 30px;
+    margin: 20px 5px 0px 5px;
+    border: 2px solid  white;
+    background-color: rgb(247, 244, 244);
+	border-radius: 10px;
+    box-shadow: 0 7px 14px rgba(0,0,0,0.25), 
+    0 5px 5px rgba(0,0,0,0.22);
+    height: 250px;
+ }

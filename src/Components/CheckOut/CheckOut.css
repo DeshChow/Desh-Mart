@@ -1,0 +1,24 @@
+button.sub{
+    border: 1px solid #007bff;
+    padding: 4px 14px;
+    background-color: #007bff;
+    color: white;
+    flex: right;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: tahoma;
+    border-radius: 50px;
+    height: 35px;
+    width: 100px;
+    margin-left: 42%;
+
+  }
+
+  button.proceedcartbtn:focus{
+    outline: none !important;
+ }
+
+.backcolr{
+    background-color: rgb(161, 159, 159)
+}
+

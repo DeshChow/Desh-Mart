@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AdminPendingReviewInner from '../AdminPendingReviewInner/AdminPendingReviewInner';
+import ReviewShowInner from '../ReviewShowInner/ReviewShowInner';
 
 const ReviewShow = () => {
 
@@ -30,7 +30,7 @@ const ReviewShow = () => {
             {
 
 
-    reviews.map(rv=> <AdminPendingReviewInner rv={rv}></AdminPendingReviewInner>)
+    reviews.map(rv=> <ReviewShowInner rv={rv}></ReviewShowInner>)
   
             }
         </div>

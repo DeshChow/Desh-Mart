@@ -1,4 +1,5 @@
 import React from 'react';
+import {SiShopify} from 'react-icons/si'
 
 const OrderSummaryDetails = (props) => {
 
@@ -21,19 +22,22 @@ const OrderSummaryDetails = (props) => {
     const total_Cost = sum + currentShippingCost;
     return (
         <div>
-         <h4>Order Summary</h4>
-                <p>Item Orders : {cartDetails.length}</p>
+         <h4 style={{fontFamily: "Apple Chancery,cursive",color: '#FC512F'}}><SiShopify style={{color:'#95C046',marginTop:'-8px'}}/>Order Summary</h4>
+                
+                <br></br>
+                <div style={{paddingLeft: '25px'}}>
+                <p>Item Orders <span style={{paddingLeft:'15px'}}> :</span> {cartDetails.length}</p>
 
 
-                <p>Product Price : {sum}</p>
+                <p>Product Price <span style={{paddingLeft:'7px'}}> :</span> {sum}</p>
 
-                <p>Shipping Cost : {currentShippingCost}</p>
+                <p>Shipping Cost <span style={{paddingLeft:'3px'}}> :</span> {currentShippingCost}</p>
 
-                <p>Total Price : {total_Cost}</p>
-
-
-
-
+                <p>Total Price <span style={{paddingLeft:'28px'}}> :</span> {total_Cost}</p>
+                
+                </div>
+             
+             <br></br>
                 
         </div>
     );

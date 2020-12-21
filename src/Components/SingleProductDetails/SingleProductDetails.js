@@ -4,6 +4,8 @@ import { useHistory, useParams } from 'react-router-dom';
 import { ClearCart, DeleteItem, getFullCart, InsertItem } from '../../Utilities/databaseManager';
 import OrderSummaryDetails from '../OrderSummaryDetails/OrderSummaryDetails';
 import './SingleProductDetails.css';
+import {AiOutlineShoppingCart} from "react-icons/ai";
+import FootItem from '../FootItem/FootItem';
 
 
 const SingleProductDetails = () => {
@@ -29,7 +31,7 @@ const SingleProductDetails = () => {
 
 
     const Counter = (now) => {
-        if (now == '-') setCurQuantity(curQuantity - 1);
+        if (now == '-') setCurQuantity(Math.max(1,curQuantity - 1));
 
         else setCurQuantity(curQuantity + 1);
     }
@@ -54,7 +56,6 @@ const SingleProductDetails = () => {
 
     }, [_id]);
 
-    //
 
    
 
@@ -110,49 +111,56 @@ const SingleProductDetails = () => {
 
 
     return (
+
+        product.name ? 
+        <div>
         <div className="singleproduct row">
 
-            <div className="col-md-6 center">
+            <div className="col-md-5">
+                  <div className="center">
+                
+                   <img className="singleproductimage" src={`data:image/png;base64,${product.image.img}`} />
 
-                {
-                    product.name && <img style={{ height: '500px', width: '100%', marginLeft: '10px' }} src={`data:image/png;base64,${product.image.img}`} />
-                }
-
+                   </div>
+                   <p style={{textAlign: 'center', marginTop: '-40px'}}>Roll over image to zoom in</p>
+                
             </div>
 
-            <div className="col-md-4 itemStyle">
+            <div className="col-md-5 itemStyle">
 
                 <h4 className='product-name' >{name}</h4>
 
-                <h6> <b>Brand :</b> {brand}</h6>
+                <br></br>
 
-                <h6><b>Color :</b> {color}</h6>
+                <h6> <b>Brand <span style={{paddingLeft:'30px'}}>:</span></b> {brand}</h6>
 
-                <h6><b>Made In :</b> {madeIn}</h6><br />
+                <h6><b>Color <span style={{paddingLeft:'34px'}}>:</span></b> {color}</h6>
 
-                <p>Price : <span className='dollar'>{price}</span></p>
+                <h6><b>Made In <span style={{paddingLeft:'14px'}}>:</span></b> {madeIn}</h6><br />
+
+                <p><span style={{color: '#565959!important'}}>Price :</span> <span className='dollar'>{price}</span></p>
+
 
                 <div>
 
                     <div>
+                        <span style={{marginRight:'10px'}}>Quantity: </span>
                         <button className="spinner" role='button' onClick={() => Counter('-')}>-</button>
 
                         <span className="spin">{curQuantity}</span>
 
                         <button className="spinner" role='button' onClick={() => Counter('+')}>+</button>
-
+                        <span className="addtocartsp">{product.name ? <button className="addtocartbtn" onClick={AddToCart}><AiOutlineShoppingCart className="hov" size="1.5em" style={{paddingRight:'5px',paddingBottom: '3px', color:'black'}}/><span className="addbtntext">Add to Cart</span></button> : <span></span>}</span>
                     </div>
 
-                    <br />
-
-                    {product.name ? <button onClick={AddToCart}>Add to Cart</button> : <span></span>}
+                   
                 </div>
-
+                <br></br>
+                <br></br>
                 <h6>About this item</h6>
 
-
-
                 <p>{itemDetails}</p>
+
 
             </div>
             <div className="col-md-2">
@@ -160,12 +168,19 @@ const SingleProductDetails = () => {
 
               <OrderSummaryDetails cartDetails={cartDetails}></OrderSummaryDetails>
 
-              <button onClick={Review}>Review Your Cart</button>
+              <button className="addtocartbtn1" onClick={Review}>BUY NOW</button>
+            
+
 
             </div>
 
+           
 
         </div>
+
+        <FootItem></FootItem>
+
+        </div>: <div></div>
 
     );
 };
