@@ -27,3 +27,7 @@ button.reviewbtn{
     width: 10%;
     height: 40px;
 }
+
+button.reviewbtn:focus{
+    outline: none !important;
+ }

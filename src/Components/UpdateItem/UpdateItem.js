@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { getUserInfo } from '../../Utilities/SessionData';
 
 const UpdateItem = () => {
+
+    let history=useHistory();
+      
+    if(getUserInfo().email!='outoftheboxdesh@gmail.com')
+    {
+        history.push('/home');
+    }
+
+
 
     const [info, setInfo] = useState({});
 

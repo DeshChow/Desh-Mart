@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import Details from './Components/Details/Details';
 import NavBar from './Components/NavBar/NavBar';
-import SideItem from './Components/SideItem/SideItem';
+
 import { createContext, useState } from 'react';
 import SingleProductDetails from './Components/SingleProductDetails/SingleProductDetails';
 import InsertItem from './Components/InsertItem/InsertItem';
@@ -25,6 +25,7 @@ import Login from './Components/Login/Login';
 import AdminPendingReview from './Components/AdminPendingReview/AdminPendingReview';
 import ReviewShow from './Components/ReviewShow/ReviewShow';
 import FootItem from './Components/FootItem/FootItem';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 export const UserContext = createContext();
@@ -37,7 +38,7 @@ function App() {
 
   return (
 
-    <UserContext.Provider value={[userAction, setUserAction]}>
+    //<UserContext.Provider value={[userAction, setUserAction]}>
       <Router>
 
         <NavBar></NavBar>
@@ -59,29 +60,29 @@ function App() {
             <Home></Home>
 
           </Route>
-          <Route path='/AdminPanel'>
+          <PrivateRoute path='/AdminPanel'>
 
             <AdminPanel></AdminPanel>
 
-          </Route>
-          <Route path='/AdminInsertItem'>
+          </PrivateRoute>
+          <PrivateRoute path='/AdminInsertItem'>
 
             <InsertItem></InsertItem>
 
-          </Route>
+          </PrivateRoute>
 
-          <Route path='/AdminDeleteItem'>
+          <PrivateRoute path='/AdminDeleteItem'>
 
             <DeleteItem></DeleteItem>
 
 
-          </Route>
-          <Route path='/AdminUpdateItem'>
+          </PrivateRoute>
+          <PrivateRoute path='/AdminUpdateItem'>
 
             <UpdateItem></UpdateItem>
 
 
-          </Route>
+          </PrivateRoute>
           <Route path='/product/:_id/:category'>
 
             <SingleProductDetails></SingleProductDetails>
@@ -89,25 +90,10 @@ function App() {
           </Route>
           <Route path='/Details/:category'>
 
-
-
-            <div >
-              <SideItem></SideItem>
-            </div>
-
-
-
-            <div >
-
+         
 
 
               <Details></Details>
-
-
-
-            </div>
-
-
 
 
 
@@ -130,29 +116,29 @@ function App() {
 
 
           </Route>
-          <Route path='/DeshMart/Checkout'>
+          <PrivateRoute path='/DeshMart/Checkout'>
 
             <CheckOut></CheckOut>
 
-          </Route>
+          </PrivateRoute>
 
-          <Route path='/AdminPendingOrder'>
+          <PrivateRoute path='/AdminPendingOrder'>
 
             <PendingOrder></PendingOrder>
 
-          </Route>
+          </PrivateRoute>
 
-          <Route path='/AdminOrderHistory'>
+          <PrivateRoute path='/AdminOrderHistory'>
 
 
             <AdminOrderHistory></AdminOrderHistory>
-          </Route>
+          </PrivateRoute>
 
-          <Route path='/AdminPendingReview'>
+          <PrivateRoute path='/AdminPendingReview'>
 
 
            <AdminPendingReview></AdminPendingReview>
-          </Route>
+          </PrivateRoute>
 
           <Route path='/ReviewShow'>
 
@@ -170,7 +156,7 @@ function App() {
     
 
 
-    </UserContext.Provider>
+  //  </UserContext.Provider>
 
   );
 }

@@ -1,15 +1,16 @@
 
 
 import './Details.css';
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../App';
+import React, {  useEffect, useState } from 'react';
+
 import ProductItem from '../ProductItem/ProductItem';
 import { useParams } from 'react-router-dom';
 import FootItem from '../FootItem/FootItem';
+import SideItem from '../SideItem/SideItem';
 
 const Details = () => {
 
-    const [userAction,setUserAction]= useContext(UserContext);
+    
 
 
     const [products,setProducts]=useState([]);
@@ -28,7 +29,26 @@ const Details = () => {
            .then(data=>setProducts(data));
 
     },[products])
+
+    const isAvailable=()=>
+    {
+         if(products.length)return true;
+
+         else return false;
+    }
     return (
+
+        <>
+
+       
+    
+         
+         {
+            isAvailable() && <SideItem></SideItem>
+         }
+
+    
+     
 
         <div>
         <div style={{marginLeft:'300px'}} className="mar">
@@ -42,9 +62,16 @@ const Details = () => {
 
         </div>
 
-        {products.length &&  <FootItem></FootItem>} 
+        
+
+         
+        {
+            isAvailable() && <FootItem></FootItem>
+         }
 
         </div>
+
+        </>
     );
 };
 

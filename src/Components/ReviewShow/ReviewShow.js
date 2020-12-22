@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReviewShowInner from '../ReviewShowInner/ReviewShowInner';
-
+import './ReviewShow.css';
 const ReviewShow = () => {
 
 
@@ -24,15 +24,16 @@ const ReviewShow = () => {
 
     },[])
 
+    
+
 
     return (
-        <div>
-            {
-
-
-    reviews.map(rv=> <ReviewShowInner rv={rv}></ReviewShowInner>)
-  
-            }
+        <div className=" row reviewsty">
+        {
+            
+            reviews.map(rv=><div className="col-md-3"><ReviewShowInner rv={rv}></ReviewShowInner></div>)
+        
+        }
         </div>
     );
 };

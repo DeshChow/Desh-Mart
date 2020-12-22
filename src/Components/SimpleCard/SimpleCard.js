@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './SimpleCard.css';
 import { useHistory } from 'react-router-dom';
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../App';
+import React, { useEffect, useState } from 'react';
+
 
 const SimpleCard = ({data}) => {
       
@@ -13,16 +13,11 @@ const SimpleCard = ({data}) => {
   const history=useHistory();
 
 
-    const [userAction,setUserAction]= useContext(UserContext);
+    
 
       const handleClick=()=>
       {
-            const newUserAction={...userAction};
-
-            newUserAction.showtopic=data.category;
-
-
-            setUserAction(newUserAction);
+            
 
             //console.log(userAction.showtopic);
             history.push('/Details/'+data.category);

@@ -10,4 +10,7 @@
     font-size: 20px;
 }
 
-
+.dropname{
+    border: none;
+    font-weight: bold;
+}

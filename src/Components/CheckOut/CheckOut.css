@@ -18,7 +18,8 @@ button.sub{
     outline: none !important;
  }
 
-.backcolr{
-    background-color: rgb(161, 159, 159)
-}
-
+ .backcolr{
+   background-image: url('../../images/Page-Turner.svg');
+   background-repeat: no-repeat;
+   background-size: cover;
+ }

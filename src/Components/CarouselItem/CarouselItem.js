@@ -6,8 +6,16 @@ import specialoffer from '../../images/specialoffer.jpg'
 import beauty from '../../images/beauty.jpg' 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useHistory } from 'react-router-dom';
 
 const CarouselItem = () => {
+
+  const history=useHistory();
+
+  const handleClick=(path)=>
+  {
+    history.push('/Details/'+path);
+  }
     return (
       <Carousel indicators={false}>
 
@@ -16,6 +24,8 @@ const CarouselItem = () => {
           className="d-block w-100"
           src={beauty}
           style={{'maxHeight': '80vh'}}
+
+          onClick={()=>handleClick('beautypics')}
          
         />
         </Carousel.Item>
@@ -26,6 +36,7 @@ const CarouselItem = () => {
           className="d-block w-100"
           src={gift}
           style={{'maxHeight': '80vh'}}
+          onClick={()=>handleClick('love')}
          
         />
     
@@ -38,6 +49,8 @@ const CarouselItem = () => {
           src={specialoffer}
 
           style={{'maxHeight': '80vh'}}
+
+          onClick={()=>handleClick('furniture')}
          
         />
      
@@ -49,6 +62,7 @@ const CarouselItem = () => {
           className="d-block w-100"
           src={holiday}
           style={{'maxHeight': '80vh'}}
+          onClick={()=>handleClick('smartproducts')}
          
         />
         </Carousel.Item>

@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { getUserInfo } from '../../Utilities/SessionData';
 
 import './DeleteItem.css';
 
 const DeleteItem = () => {
+
+
+      let history=useHistory();
+
+    if(getUserInfo().email!='outoftheboxdesh@gmail.com')
+    {
+        history.push('/home');
+    }
 
 
     const [info, setInfo] = useState({});

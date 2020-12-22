@@ -1,9 +1,16 @@
 import React,{useState,useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
+import { getUserInfo } from '../../Utilities/SessionData';
 import AdminPendingReviewInner from '../AdminPendingReviewInner/AdminPendingReviewInner';
 
 const AdminPendingReview = () => {
 
+    let history=useHistory();
 
+    if(getUserInfo().email!='outoftheboxdesh@gmail.com')
+    {
+        history.push('/home');
+    }
     const [reviews,setReviews]=useState([]);
 
     useEffect(()=>

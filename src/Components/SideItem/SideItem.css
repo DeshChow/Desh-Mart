@@ -1,5 +1,5 @@
 .sidebar{
-    background-image:linear-gradient(40deg, #19d3ae,#0fcfec);
+   background-color: #f5f5f5;
    position: absolute !important;
     
 }
@@ -12,4 +12,10 @@
 }
 .sidebar svg{
     margin-right: 5px;
+}
+
+
+.textblack{
+    color: black ;
+    font-weight: medium;
 }

@@ -121,7 +121,7 @@ const Category = () => {
               <div className='row categorycontainer'>
                  
                     {
-             firstRowData.map(data=><SimpleCard data={data} category={data.category}></SimpleCard>)
+             firstRowData.map(data=><SimpleCard data={data}></SimpleCard>)
 
                     }
               </div>

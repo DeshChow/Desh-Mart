@@ -7,6 +7,7 @@ import deletepic from '../../images/delete.jpg'
 import updatepic from '../../images/update.jpg'
 import pendingorder from '../../images/pendingorder.jpg'
 import './AdminPanel.css'
+import { getUserInfo } from '../../Utilities/SessionData';
 
 const AdminPanel = () => {
 
@@ -16,6 +17,12 @@ const AdminPanel = () => {
 
     const handleClick = (str) => {
         history.push('/' + str);
+    }
+
+
+    if(getUserInfo().email!='outoftheboxdesh@gmail.com')
+    {
+        history.push('/home');
     }
 
 

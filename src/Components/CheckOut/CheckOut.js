@@ -5,6 +5,7 @@ import { getUserInfo } from '../../Utilities/SessionData';
 import {AiFillTag} from "react-icons/ai";
 import './CheckOut.css';
 import BodyClassName from 'react-body-classname';
+import { useHistory } from 'react-router-dom';
 
 const CheckOut = () => {
 
@@ -13,6 +14,8 @@ const CheckOut = () => {
         const [info, setInfo] = useState({});
 
         const [loginUser,setLoginUser]=useState({});
+
+        const history=useHistory();
        
     
         //const [products, setProducts] = useState([]);
@@ -41,6 +44,16 @@ const CheckOut = () => {
         }
     
         const handleSubmit = (e) => {
+
+
+            if(getFullCart().length==0)
+            {
+                alert('You Cannot Place a Empty Order');
+
+                history.push('/ReviewCart');
+
+                return ;
+            }
             e.preventDefault();
     
             /*// console.log(info);

@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import SinglePendingOrder from '../SinglePendingOrder/SinglePendingOrder';
-
+import { useHistory } from 'react-router-dom';
+import { getUserInfo } from '../../Utilities/SessionData';
 const AdminOrderHistory = () => {
 
+  
+    let history=useHistory();
+    if(getUserInfo().email!='outoftheboxdesh@gmail.com')
+    {
+        history.push('/home');
+    }
+
+
     const [orderHistory,setOrderHistory]=useState([]);
+   
+
+
 
     useEffect(()=>
     {

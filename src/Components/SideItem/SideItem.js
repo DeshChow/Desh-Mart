@@ -1,23 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './SideItem.css';
+import {GiCheckMark} from "react-icons/gi";
 
 const SideItem = () => {
     return (
-        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
+        <div className="sidebar d-flex flex-column justify-content-between col-md-2  py-5 px-4" style={{ height: "100vh" }}>
             <ul className="list-unstyled">
                 <li>
-                    <Link to="/Details/womensdress" className="text-white">
+                    <Link to="/Details/womensdress" className="textblack">
 
-                        <span>Womens Dress</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Womens Dress</span>
 
                     </Link>
                 </li>
                 <li>
 
-                    <Link to="/Details/beautypics" className="text-white">
+                    <Link to="/Details/beautypics" className="textblack">
 
-                        <span>Beauty picks</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Beauty picks</span>
 
                     </Link>
 
@@ -25,90 +26,90 @@ const SideItem = () => {
 
                 <li>
 
-                    <Link to="/Details/smartproducts" className="text-white">
+                    <Link to="/Details/smartproducts" className="textblack">
 
-                        <span>Smart Products</span>
-
-                    </Link>
-
-                </li>
-                <li>
-
-                    <Link to="/Details/bedding" className="text-white">
-
-                        <span>Bedding</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Smart Products</span>
 
                     </Link>
 
                 </li>
                 <li>
 
-                    <Link to="/Details/electronics" className="text-white">
+                    <Link to="/Details/bedding" className="textblack">
 
-                        <span>Electronics</span>
-
-                    </Link>
-
-                </li>
-                <li>
-
-                    <Link to="/Details/light" className="text-white">
-
-                        <span>Light</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Bedding</span>
 
                     </Link>
 
                 </li>
                 <li>
 
-                    <Link to="/Details/computer" className="text-white">
+                    <Link to="/Details/electronics" className="textblack">
 
-                        <span>Computer</span>
-
-                    </Link>
-
-                </li>
-                <li>
-
-                    <Link to="/Details/mensdress" className="text-white">
-
-                        <span>Mens Dress</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Electronics</span>
 
                     </Link>
 
                 </li>
                 <li>
 
-                    <Link to="/Details/medical" className="text-white">
+                    <Link to="/Details/light" className="textblack">
 
-                        <span>Medical</span>
-
-                    </Link>
-
-                </li>
-                <li>
-
-                    <Link to="/Details/laptab" className="text-white">
-
-                        <span>Laptop and Tablet</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Light</span>
 
                     </Link>
 
                 </li>
                 <li>
 
-                    <Link to="/Details/furniture" className="text-white">
+                    <Link to="/Details/computer" className="textblack">
 
-                        <span>Furniture</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Computer</span>
 
                     </Link>
 
                 </li>
                 <li>
 
-                    <Link to="/Details/love" className="text-white">
+                    <Link to="/Details/mensdress" className="textblack">
 
-                        <span>Love</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Mens Dress</span>
+
+                    </Link>
+
+                </li>
+                <li>
+
+                    <Link to="/Details/medical" className="textblack">
+
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Medical</span>
+
+                    </Link>
+
+                </li>
+                <li>
+
+                    <Link to="/Details/laptab" className="textblack">
+
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Laptop and Tablet</span>
+
+                    </Link>
+
+                </li>
+                <li>
+
+                    <Link to="/Details/furniture" className="textblack">
+
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Furniture</span>
+
+                    </Link>
+
+                </li>
+                <li>
+
+                    <Link to="/Details/love" className="textblack">
+
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Love</span>
 
                     </Link>
 

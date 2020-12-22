@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react'
 
 import firebase from "firebase/app";
@@ -10,7 +8,7 @@ import google from '../../images/google.png'
 import facebook from '../../images/facebook.png'
 
 import { ClearUserInfo, InsertUserInfo } from '../../Utilities/SessionData';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 
@@ -33,8 +31,28 @@ const Login = () => {
     
   });
 
+    const location=useLocation();
+
+    let {from}=location.state  || {from :{pathname:'/home'}};
+
 
     const [loginUser,setLoginUser]=useState({});
+
+    const LoginCheck=(email)=>
+    {
+
+      console.log(email,typeof(email));
+
+        if(email=='outoftheboxdesh@gmail.com')
+      history.replace(from);
+
+        else 
+        { 
+          alert('Only Admin Access');
+
+          history.replace('/home');
+        }
+    }
 
   const handleGoogleSignIn = () => {
 
@@ -47,7 +65,8 @@ const Login = () => {
 
         InsertUserInfo( { displayName, emailVerified, email });
 
-        history.push('/home');
+
+        LoginCheck(email);
 
         window.location.reload(false);
 
@@ -279,7 +298,7 @@ const Login = () => {
       return (
         <div className='FormSignIN'>
         
-          <div className="container" id="container">
+          <div className="container" id="container" style={{marginTop: '115px'}}>
             <div className="form-container sign-up-container">
               <form className="Test" >
                 <h1 className="Test">Create Account</h1>

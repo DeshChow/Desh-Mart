@@ -3,10 +3,12 @@
 
 
 .FormSignIN {
-	background: #f6f5f7;
+	/*background: #f6f5f7;*/
+	background-image: url('../../images/Page-Turner.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	box-sizing: border-box;
-	
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;

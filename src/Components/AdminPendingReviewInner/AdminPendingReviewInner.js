@@ -3,14 +3,16 @@ import React from 'react';
 const AdminPendingReviewInner = (props) => {
 
     
-    const {name,review,_id}=props.rv;
+    const {name,review,_id,reviewDate}=props.rv;
+
+    const {day,month,year}=reviewDate;
 
     const Approve=()=>
     {
           
         
 
-        const ReviewInfo={name,review,_id};
+        const ReviewInfo={name,review,_id,reviewDate};
 
         console.log(ReviewInfo);
 
@@ -65,6 +67,8 @@ const AdminPendingReviewInner = (props) => {
             <h1>Name : {name}</h1>
 
             <p>Review : {review}</p>
+
+            <h1>{day}/{month}/{year}</h1>
 
 
             <button onClick={Approve}>Approve</button>

@@ -25,7 +25,20 @@ const UserReview = () => {
 
         const name=info.name;
 
-        const ReviewInfo={name,review};
+        const date=new Date();
+
+        const month=date.getMonth()+1;
+
+        const day=date.getDate()
+
+        const year=date.getFullYear();
+
+        const reviewDate={day,month,year};
+
+
+
+        const ReviewInfo={name,review,reviewDate};
+
 
         console.log(ReviewInfo);
 
@@ -54,13 +67,13 @@ const UserReview = () => {
                 <form onSubmit={handleSubmit}>
                     <div class="form-group">
                         <label for="exampleInputName1"></label>
-                        <input onBlur={handleBlur} type="text" class="form-control" name='name' id="exampleInputPassword1" placeholder="Name" />
+                        <input onBlur={handleBlur} type="text" class="form-control" name='name' id="exampleInputPassword1" placeholder="Name" required />
                     </div>
 
 
                     <div class="form-group">
                         <label for="exampleInputitemreview1"></label>
-                        <textarea onBlur={handleBlur} class="form-control" name="review" rows="07" placeholder='Drop Your Review Here'></textarea>
+                        <textarea onBlur={handleBlur} class="form-control" name="review" rows="07" placeholder='Drop Your Review Here' required></textarea>
                     </div>
 
                     <button type="submit" class="reviewbtn">Submit</button>
