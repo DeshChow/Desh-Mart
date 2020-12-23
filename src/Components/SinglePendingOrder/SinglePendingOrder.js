@@ -3,74 +3,77 @@ import { Card } from 'react-bootstrap';
 import SinglePendingOrderInner from '../SinglePendingOrderInner/SinglePendingOrderInner';
 import './SinglePendingOrder.css';
 import orderback from '../../images/orderback.jpg';
-
-const SinglePendingOrder = ({ order ,collection}) => {
-
-    const { _id, Cart, buyerDetails,TotalPrice } = order;
-
-
-    const {name,email,address}=buyerDetails;
+import {FcBusinessman} from "react-icons/fc";
+import {AiTwotoneMail} from "react-icons/ai";
+import {ImLocation2} from "react-icons/im";
+import {AiFillTag} from "react-icons/ai";
 
 
-    const DeleteOrder=()=>
-    {
-        const url='http://localhost:5000/deleteOrder/'+collection+'/'+_id;
+const SinglePendingOrder = ({ order, collection }) => {
 
-       // console.log(url)
- 
-         fetch(url, {
-             method: 'DELETE'
-            
-         })
-             .then(response => response.json())
-             .then(data => {
-                 //console.log(data)
- 
-                 if(data)
-                 {
+    const { _id, Cart, buyerDetails, TotalPrice } = order;
+
+
+    const { name, email, address } = buyerDetails;
+
+
+    const DeleteOrder = () => {
+        const url = 'http://localhost:5000/deleteOrder/' + collection + '/' + _id;
+
+        // console.log(url)
+
+        fetch(url, {
+            method: 'DELETE'
+
+        })
+            .then(response => response.json())
+            .then(data => {
+                //console.log(data)
+
+                if (data) {
                     window.location.reload(false);
-                //     alert('succuessfully deleted from '+collection);
-                    
-                 }
-             })
-             .catch(error => {
-                 console.error(error)
-             })
+                    //     alert('succuessfully deleted from '+collection);
+
+                }
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 
-   
+
 
 
     return (
-        <div className="full-form" >
-
-            <Card  style={{ width: '40rem',height:'15rem' }}  className="left-form">
-
-            
-              <h1>Name : {name}</h1>
-                <h2>Email :{email}</h2>
-
-                <p>Address :{address}</p>
-            
-            </Card>
-            <div style={{width: '10px'}}>
-
+        
+        
+   
+        <div>
+           <Card style={{height: 'auto', backgroundColor:'#fceae8'}} className="revcard">
+            <br></br>
+            <div id="pendingstyle" style={{marginLeft: '110px'}}>
+             <div><span style={{fontSize: '20px'}}><FcBusinessman size="2rem"/><b>{name}</b></span></div>
+             <div><span style={{fontSize: '20px'}}><AiTwotoneMail size="2rem" style={{color: 'red'}}/><b>{email}</b></span></div>
+             <div><span style={{fontSize: '20px'}}><ImLocation2 size="2rem" style={{color: 'yellowgreen'}}/><b>{address}</b></span></div>
             </div>
-
-            <Card className="right-form">
-
-             {
-                    Cart.map(cart=><SinglePendingOrderInner cart={cart} key={cart.id}></SinglePendingOrderInner>)
-                }
-            <h2>Total Price : {TotalPrice}</h2>
-
             
-            <div className="ordercontainer">
-            <button onClick={DeleteOrder} className="ordertest">DELETE</button >
-            </div>
+            <br></br>
+
+            {
+                Cart.map(cart => <SinglePendingOrderInner cart={cart} key={cart.id}></SinglePendingOrderInner>)
+            }
+
+            <br></br>
+
+             <h4 style={{textAlign: 'center', marginBottom: '20px'}} ><b>Total Price : <span style={{fontSize: '30px', color: '#F9A805'}}>${TotalPrice}</span> </b></h4>
+             <span> <button className="pendingorderdelete" onClick={DeleteOrder} >DELETE</button ></span>
             </Card>
-          
+            <br></br>
+            <br></br>
+
         </div>
+
+
     );
 };
 

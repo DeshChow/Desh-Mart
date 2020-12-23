@@ -18,6 +18,7 @@
     color: #fff;
     background-color: #00142D;
     margin-top: 20px;
+    height: 460px;
     }
     
     .footer > * {
@@ -31,7 +32,7 @@
     
     .footh2 {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 20px;
     }
     
     .footer ul {
@@ -57,8 +58,9 @@
     margin-right: 1.25em;
     }
     
-    .box a {
-    color: #999;
+    .box  {
+    color: #DDD8D8;
+    font-size: 18px;
     }
     
     .h-box {

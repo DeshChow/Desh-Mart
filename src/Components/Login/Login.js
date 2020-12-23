@@ -9,11 +9,25 @@ import facebook from '../../images/facebook.png'
 
 import { ClearUserInfo, InsertUserInfo } from '../../Utilities/SessionData';
 import { useHistory, useLocation } from 'react-router-dom';
-
+import {AiFillTag} from "react-icons/ai";
+import {FaFacebook} from "react-icons/fa";
+import {FcGoogle} from "react-icons/fc";
 
 
 
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+
+export const  handleSignOut = () => {
+
+  firebase.auth().signOut()
+    .then(result => {
+
+      ClearUserInfo();
+
+    }).catch(error => console(error, error.message));
+
+
+}
 
 
 const Login = () => {
@@ -78,17 +92,7 @@ const Login = () => {
   }
 
 
-  const handleSignOut = () => {
-
-    firebase.auth().signOut()
-      .then(result => {
-
-        ClearUserInfo();
-
-      }).catch(error => console(error, error.message));
-
-
-  }
+   
 
   const handleFbSignIn=()=>{
  
@@ -146,6 +150,17 @@ const Login = () => {
       const isPasswordValid = event.target.value.length > 6;
  
       const passHasNumber = /\d{1}/.test(event.target.value);
+
+
+       if(!isPasswordValid && !passHasNumber)
+      alert('Your password should contain at least seven characters and one digit');
+       else if(isPasswordValid==false)
+       alert('Your password should contain at least seven characters');
+
+      else if(passHasNumber==false)
+      alert('Your password shoould contain minimum one digit');
+
+     
  
       isFieldValid &= isPasswordValid && passHasNumber;
  
@@ -300,33 +315,35 @@ const Login = () => {
         
           <div className="container" id="container" style={{marginTop: '115px'}}>
             <div className="form-container sign-up-container">
-              <form className="Test" >
+
+              <form  onSubmit={signupForm} className="Test" >
                 <h1 className="Test">Create Account</h1>
                 <div className="social-container">
-                  <a className="Test" onClick={handleFbSignIn} className="social"><img src={facebook} className="fab fa-facebook-f" /></a>
-                  <a className="Test" onClick={handleGoogleSignIn} className="social"><img src={google} className="fab fa-google-plus-g" /></a>
-                  <a className="Test" className="social"><img className="fab fa-linkedin-in" /></a>
+                  <a className="Test" onClick={handleFbSignIn} className="social"><FaFacebook size="2rem"/></a>
+                  <a className="Test" onClick={handleGoogleSignIn} className="social"><FcGoogle size="2rem"/></a>
                 </div>
                 <span className="Test">or use your email for registration</span>
                 <input className="Test" onBlur={handleBlurSignUp} name='displayName'  type="text" placeholder="Name" required/>
                 <input className="Test" onBlur={handleBlurSignUp}  name='email'  type="email" placeholder="Email" required />
                 <input className="Test" onBlur={handleBlurSignUp}  name='password' type="password" placeholder="Password"  required />
-                <button className="Test" onClick={signupForm}>Sign Up</button>
+                <button type='submit' className="Test" >Sign Up</button>
               </form>
+
             </div>
+
             <div className="form-container sign-in-container">
-              <form className="Test">
+
+              <form onSubmit={signinForm} className="Test">
                 <h1 className="Test">Sign in</h1>
                 <div className="social-container">
-                  <a className="Test" onClick={handleFbSignIn} className="social"><img src={facebook} className="fab fa-facebook-f" /></a>
-                  <a className="Test" onClick={handleGoogleSignIn} className="social"><img src={{google}} className="fab fa-google-plus-g" /></a>
-                  <a  className="Test" className="social"><img className="fab fa-linkedin-in" /></a>
+                  <a className="Test" onClick={handleFbSignIn} className="social"><FaFacebook size="2rem"/></a>
+                  <a className="Test" onClick={handleGoogleSignIn} className="social"><FcGoogle size="2rem"/></a>
                 </div>
                 <span className="Test">or use your account</span>
                 <input className="Test" onBlur={handleBlurSignIn} name='emailSignIn' type="email" placeholder="Email" required />
                 <input className="Test" onBlur={handleBlurSignIn} name='passwordSignIn' type="password" placeholder="Password" required/>
                 <a className="Test" >Forgot your password?</a>
-                <button className="Test" onClick={signinForm}>Sign In</button>
+                <button type='submit' className="Test" >Sign In</button>
               </form>
             </div>
 
@@ -334,12 +351,12 @@ const Login = () => {
             <div className="overlay-container">
               <div className="overlay">
                 <div className="overlay-panel overlay-left">
-                  <img src={google} />
+                  <span  style={{ 'fontFamily': 'cursive', 'fontSize': '3rem'}}><AiFillTag style={{color: 'orange'}}/><b className="logg">D</b>esh<b className="logg">M</b>art</span>
                   <p className="Test">Welcome back! To keep connected with us please login with your personal info</p>
                   <button  className="ghost Test" id="signIn" onClick={ChangeSignInForm}>Sign In</button>
                 </div>
-                <div className="overlay-panel overlay-right">
-                  <img src={google} />
+                <div className="overlay-panel overlay-right"> 
+               <span  style={{ 'fontFamily': 'cursive', 'fontSize': '3rem'}}><AiFillTag style={{color: 'orange'}}/><b className="logg">D</b>esh<b className="logg">M</b>art</span>
                   <p className="Test">Hello! Enter your personal details and start journey with us</p>
                   <button  className="ghost Test" id="signUp" onClick={ChangeSignUpForm}>Sign Up</button>
                 </div>
@@ -352,3 +369,4 @@ const Login = () => {
 };
 
 export default Login;
+

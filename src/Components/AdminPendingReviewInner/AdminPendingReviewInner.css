@@ -1,0 +1,47 @@
+.pendingcardrev{
+    width: 500px;
+    margin-left: 20px;
+    border: 10px solid gray;
+    border-radius: 5px; 
+}
+
+
+ button.finalbtn1{
+    border: 1px solid rgb(128, 209, 7);;
+    padding: 4px 14px;
+    background-color: rgb(128, 209, 7);
+    color: white;
+    flex: right;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: tahoma;
+    border-radius: 50px;
+    height: 35px;
+    width: 200px;
+    margin-left: 80px;
+  }
+
+  button.finalbtn1:focus{
+    outline: none !important;
+ }
+
+
+ button.finalbtn2{
+    border: 1px solid #fa3e3e;
+    padding: 4px 14px;
+    background-color: #fa3e3e;
+    color: black;
+    flex: right;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: tahoma;
+    border-radius: 50px;
+    height: 35px;
+    width: 200px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+  }
+
+  button.finalbtn2:focus{
+    outline: none !important;
+ }

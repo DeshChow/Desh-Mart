@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import { getUserInfo } from '../../Utilities/SessionData';
 import AdminPendingReviewInner from '../AdminPendingReviewInner/AdminPendingReviewInner';
+import {AiFillTag} from "react-icons/ai";
 
 const AdminPendingReview = () => {
 
@@ -33,13 +34,17 @@ const AdminPendingReview = () => {
 
     return (
 
-     
+        
         <div>
+        
+        <span  style={{ 'fontFamily': 'cursive', 'fontSize': '3rem', marginLeft: '36.5%'}}><AiFillTag style={{color: 'orange'}}/><b className="logg">D</b>esh<b className="logg">M</b>art</span>
 
-          
+
+          <div className="row" style={{paddingLeft: '20px', paddingRight: '20px'}}>
            {
-             reviews.map(rv=> <AdminPendingReviewInner rv={rv}></AdminPendingReviewInner>)
+             reviews.map(rv=><div className="col-md-3"> <AdminPendingReviewInner rv={rv}></AdminPendingReviewInner></div>)
            }
+         </div>
         </div>
     );
 };

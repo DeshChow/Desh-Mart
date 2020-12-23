@@ -3,6 +3,7 @@ import SinglePendingOrder from '../SinglePendingOrder/SinglePendingOrder';
 import SingleProductDetails from '../SingleProductDetails/SingleProductDetails';
 import { useHistory } from 'react-router-dom';
 import { getUserInfo } from '../../Utilities/SessionData';
+import {AiFillTag} from "react-icons/ai";
 
 
 const PendingOrder = () => {
@@ -37,6 +38,7 @@ const PendingOrder = () => {
 
     return (
         <div>
+             <span  style={{ 'fontFamily': 'cursive', 'fontSize': '3rem', marginLeft: '36.5%'}}><AiFillTag style={{color: 'orange'}}/><b className="logg">D</b>esh<b className="logg">M</b>art</span>
 
            {
                orders.map(order=><SinglePendingOrder order={order} collection="orders"></SinglePendingOrder>)

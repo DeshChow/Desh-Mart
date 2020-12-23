@@ -5,15 +5,28 @@ import {AiFillTwitterCircle} from "react-icons/ai";
 import {FaInstagramSquare} from "react-icons/fa";
 import {AiOutlineWhatsApp} from "react-icons/ai";
 import {AiFillTag} from "react-icons/ai";
+import { useHistory } from 'react-router-dom';
 
 const FootItem = () => {
+
+
+    let history=useHistory();
+
+     const RouteChange=(path)=>
+     {
+           history.push(path);
+     }
     return (
         <div className="footbody" id="foot">
         <footer class="footer">
             <div class="l-footer">
             <span><AiFillTag size="3rem" style={{color:'orange', marginTop: '-25px'}}/></span> 
                <span  style={{ 'fontFamily': 'cursive', 'fontSize': '3rem'}}><b className="logg">D</b>esh<b className="logg">M</b>art</span>
+            <br></br>
+            <br></br>
                 <p style={{ textAlign: 'justify'}}>Our mission is to continually raise the bar of the customer experience by using the internet and technology to help consumers find, discover and buy anything, and empower businesses and content creators to maximise their success. We aim to be Earth's most customer centric company.</p>
+                <br></br>
+                <br></br>
 
                     <ul class="social-icons">
                         <li><a  className="facebook" href="https://web.facebook.com/profile.php?id=100060109186720"><FaFacebook size="1.5em"/></a></li>
@@ -22,42 +35,57 @@ const FootItem = () => {
                         <li><a className="whatsapp" href="https://api.whatsapp.com/send?phone=+8801778482201"><AiOutlineWhatsApp size="1.5em"/></a></li>   
                     </ul>
             </div>
-            <ul class="r-footer">
+            <ul class="r-footer" >
                 <li>
-                    <h2 className="footh2">
-                        Social</h2>
-                    <ul class="box">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Pinterest</a></li>
-                        <li><a href="#">Dribbble</a></li>
+                    <b className="footh2" >
+                        Product </b>
+                    <ul class="box" style={{cursor:'pointer'}}>
+                        <li><a onClick={()=>RouteChange('/Details/womensdress')}>Womens Zone</a></li>
+
+                        <li><a onClick={()=>RouteChange('/Details/beautypics')}>Beauty Picks</a></li>
+
+                        <li><a onClick={()=>RouteChange('/Details/smartproducts')}>Smart Products</a></li>
+
+                        <li><a onClick={()=>RouteChange('/Details/bedding')}>Bedding</a></li>
+
+                        <li><a onClick={()=>RouteChange('/Details/electronics')}>Electronics</a></li>
+
+                        <li> <a onClick={()=>RouteChange('/Details/computer')}>Computer Accessories</a></li>
+
+                        
+
                     </ul>
                 </li>
-                <li class="features">
-                    <h2 className="footh2">
-                        Information</h2>
-                    <ul class="box h-box">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Sales</a></li>
-                        <li><a href="#">Tickets</a></li>
-                        <li><a href="#">Certifications</a></li>
-                        <li><a href="#">Customer Service</a></li>
-                    </ul>
+                <li class="features" style={{marginTop:'-5px', fontSize: '18px', color: '#DDD8D8'}}>
+                        <br></br>
+                        
+                        <li><a onClick={()=>RouteChange('/Details/light')}>Home Decor</a></li>
+
+                        <li> <a onClick={()=>RouteChange('/Details/mensdress')}>Mens Zone</a></li>
+
+                        <li><a onClick={()=>RouteChange('/Details/medical')}>Medical</a></li>
+
+                        <li><a onClick={()=>RouteChange('/Details/laptab')}>Gadget</a></li>
+
+                        <li><a onClick={()=>RouteChange('/Details/furniture')}>Furniture</a></li>
+
+                        <li> <a onClick={()=>RouteChange('/Details/love')}>Gift Item</a></li>
                 </li>
                 <li>
                     <h2 className="footh2">
-                        Legal</h2>
+                        Address</h2>
                     <ul class="box">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Contract</a></li>
+                        <p>DeshMart(USA):</p>
+                        <li>410 Terry Ave N, Seattle, WA 98109</li>
+                        <br></br>
+                        <p>DeshMart(UK):</p>
+                        <li>60 Holborn Viaduct, Holborn, London EC1A 2FD, United Kingdom</li>
                     </ul>
                 </li>
             </ul>
             <div class="b-footer">
                 <p>
-                    All rights reserved by ©CompanyName 2020 </p>
+                    All rights reserved by ©DeshMart 2020 </p>
             </div>
         </footer>
 

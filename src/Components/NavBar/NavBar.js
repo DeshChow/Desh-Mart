@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { ClearUserInfo, InsertUserInfo,getUserInfo } from '../../Utilities/SessionData';
 import {AiFillTag} from "react-icons/ai";
 import Dropdown from 'react-bootstrap/Dropdown';
+import { handleSignOut } from '../Login/Login';
 
 
 const NavBar = () => {
@@ -65,7 +66,11 @@ const NavBar = () => {
          <Dropdown.Item onClick={()=>history.push('/Details/smartproducts')}>Recommendations</Dropdown.Item>
 
 
-         <Dropdown.Item onClick={()=>ClearUserInfo()}>Sign Out</Dropdown.Item>
+         <Dropdown.Item onClick={()=>
+          {
+            ClearUserInfo();
+            handleSignOut();
+            }}>Sign Out</Dropdown.Item>
 
         
        
