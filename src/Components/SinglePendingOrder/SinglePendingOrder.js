@@ -6,7 +6,7 @@ import orderback from '../../images/orderback.jpg';
 import {FcBusinessman} from "react-icons/fc";
 import {AiTwotoneMail} from "react-icons/ai";
 import {ImLocation2} from "react-icons/im";
-import {AiFillTag} from "react-icons/ai";
+
 
 
 const SinglePendingOrder = ({ order, collection }) => {

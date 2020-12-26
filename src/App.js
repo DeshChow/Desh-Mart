@@ -83,11 +83,13 @@ function App() {
 
 
           </PrivateRoute>
+
           <Route path='/product/:_id/:category'>
 
             <SingleProductDetails></SingleProductDetails>
 
           </Route>
+          
           <Route path='/Details/:category'>
 
          

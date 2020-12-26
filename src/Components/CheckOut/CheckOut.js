@@ -6,7 +6,7 @@ import {AiFillTag} from "react-icons/ai";
 import './CheckOut.css';
 import BodyClassName from 'react-body-classname';
 import { useHistory } from 'react-router-dom';
-
+import swal from 'sweetalert';
 const CheckOut = () => {
 
     
@@ -48,7 +48,9 @@ const CheckOut = () => {
 
             if(getFullCart().length==0)
             {
-                alert('You Cannot Place a Empty Order');
+               
+
+                swal("You Cannot Place a Empty Order!");
 
                 history.push('/ReviewCart');
 
@@ -93,7 +95,7 @@ const CheckOut = () => {
              {
                  if(result)
                  {
-                     alert('Successfully saved  buyer order');
+                    swal("Good job!", "Successfully Order Done!", "success");
 
                      ClearCart();
                  }

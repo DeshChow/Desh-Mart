@@ -2,6 +2,7 @@ import React, {useState}from 'react';
 
 import './UserReview.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import swal from 'sweetalert';
 
 const UserReview = () => {
 
@@ -51,7 +52,7 @@ const UserReview = () => {
            .then(res=>res.json())
            .then(result=>
             {
-                if(result)alert('Successfully review');
+                if(result)swal("Good job!", "Your Review On Pendding!", "success");
             })
 
     }
