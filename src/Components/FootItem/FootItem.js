@@ -56,7 +56,7 @@ const FootItem = () => {
 
                     </ul>
                 </li>
-                <li class="features" style={{marginTop:'-5px', fontSize: '18px', color: '#DDD8D8'}}>
+                <li class="features" style={{marginTop:'-5px',marginLeft:'100px', fontSize: '18px', color: '#DDD8D8',cursor:'pointer'}}>
                         <br></br>
                         
                         <li><a onClick={()=>RouteChange('/Details/light')}>Home Decor</a></li>
@@ -70,11 +70,19 @@ const FootItem = () => {
                         <li><a onClick={()=>RouteChange('/Details/furniture')}>Furniture</a></li>
 
                         <li> <a onClick={()=>RouteChange('/Details/love')}>Gift Item</a></li>
+
+                        
                 </li>
-                <li>
-                    <h2 className="footh2">
+                <li class="features" style={{marginTop:'-5px', fontSize: '18px', color: '#DDD8D8'}}>
+                    <b className="footh2" style={{marginLeft: '-30px'}}>Services</b>
+                    <li style={{marginLeft: '-30px' }}><a style={{cursor:'pointer'}} onClick={()=>RouteChange('/ReviewShow')}>Reviews</a></li>
+                    <li style={{marginLeft: '-30px'}}>Cash on Delivery</li>
+                </li>
+               
+                <li >
+                    <h2 className="footh2" style={{marginLeft: '-50px'}}>
                         Address</h2>
-                    <ul class="box">
+                    <ul class="box" style={{marginLeft: '-50px'}}>
                         <p>DeshMart(USA):</p>
                         <li>410 Terry Ave N, Seattle, WA 98109</li>
                         <br></br>
@@ -84,7 +92,7 @@ const FootItem = () => {
                 </li>
             </ul>
             <div class="b-footer">
-                <p>
+                <p style={{marginTop: '-20px'}}> 
                     All rights reserved by ©DeshMart 2020 </p>
             </div>
         </footer>

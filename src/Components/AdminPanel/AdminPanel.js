@@ -6,6 +6,9 @@ import insertpic from '../../images/insert.jpg'
 import deletepic from '../../images/delete.jpg'
 import updatepic from '../../images/update.jpg'
 import pendingorder from '../../images/pendingorder.jpg'
+import review from '../../images/review.jpg'
+import orderhistory from '../../images/orderhistory.jpg'
+
 import './AdminPanel.css'
 import { getUserInfo } from '../../Utilities/SessionData';
 
@@ -64,13 +67,13 @@ const AdminPanel = () => {
                 </Card>
                 <Card>
                     <Card.Body>
-                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={insertpic} onClick={() => handleClick('AdminOrderHistory')} />
+                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={orderhistory} onClick={() => handleClick('AdminOrderHistory')} />
 
                     </Card.Body>
                 </Card>
                 <Card>
                     <Card.Body>
-                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={insertpic} onClick={() => handleClick('AdminPendingReview')} />
+                        <Card.Img style={{ cursor: 'pointer' }} variant="top" src={review} onClick={() => handleClick('AdminPendingReview')} />
 
                     </Card.Body>
                 </Card>
