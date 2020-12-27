@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { getUserInfo } from '../../Utilities/SessionData';
 import AdminPendingReviewInner from '../AdminPendingReviewInner/AdminPendingReviewInner';
 import {AiFillTag} from "react-icons/ai";
+import swal from 'sweetalert';
 
 const AdminPendingReview = () => {
 
@@ -11,6 +12,7 @@ const AdminPendingReview = () => {
     if(getUserInfo().email!='outoftheboxdesh@gmail.com')
     {
         history.push('/home');
+        swal("Only Admin Access!");
     }
     const [reviews,setReviews]=useState([]);
 

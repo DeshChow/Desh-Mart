@@ -6,6 +6,8 @@ import OrderSummaryDetails from '../OrderSummaryDetails/OrderSummaryDetails';
 import './SingleProductDetails.css';
 import {AiOutlineShoppingCart} from "react-icons/ai";
 import FootItem from '../FootItem/FootItem';
+import Loader from 'react-loader-spinner'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 
 const SingleProductDetails = () => {
@@ -180,7 +182,7 @@ const SingleProductDetails = () => {
 
         <FootItem></FootItem>
 
-        </div>: <div></div>
+        </div>:<Loader className='App' type="Oval" color="#149DF8" height={80} width={80} />
 
     );
 };

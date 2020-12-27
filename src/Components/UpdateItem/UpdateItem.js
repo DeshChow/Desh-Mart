@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getUserInfo } from '../../Utilities/SessionData';
 import {AiFillTag} from "react-icons/ai";
+import swal from 'sweetalert';
 
 const UpdateItem = () => {
 
@@ -10,6 +11,7 @@ const UpdateItem = () => {
     if(getUserInfo().email!='outoftheboxdesh@gmail.com')
     {
         history.push('/home');
+        swal("Only Admin Access!");
     }
 
 
@@ -52,7 +54,7 @@ const UpdateItem = () => {
            .then(res=>res.json())
            .then(result=>
             {
-                if(result)alert('Successfully updated');
+                if(result)swal("Updated!", "Your Product Price Successfully Updated!", "success");
             })
 
     }

@@ -117,24 +117,24 @@ const CheckOut = () => {
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input onBlur={handleBlur} type="text" defaultValue={loginUser.email} class="form-control" name='email' id="exampleInputEmail1" placeholder="Email" />
+                        <input onBlur={handleBlur} type="text" defaultValue={loginUser.email} class="form-control" name='email' id="exampleInputEmail1" placeholder="Email" required/>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputName1">Name</label>
-                        <input onBlur={handleBlur} type="text" defaultValue={loginUser.displayName} class="form-control" name="name" placeholder="Name" />
+                        <input onBlur={handleBlur} type="text" defaultValue={loginUser.displayName} class="form-control" name="name" placeholder="Name" required />
 
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputaddress1">Address</label>
-                        <input onBlur={handleBlur} type="address" class="form-control" name="address" placeholder="Address" />
+                        <input onBlur={handleBlur} type="address" class="form-control" name="address" placeholder="Address" required />
 
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputPhone1">Phone</label>
-                        <input onBlur={handleBlur} type="phone" class="form-control" name="phone" placeholder="Enter Phone Number Here" />
+                        <input onBlur={handleBlur} type="phone" class="form-control" name="phone" placeholder="Enter Phone Number Here" required />
 
                     </div>
 

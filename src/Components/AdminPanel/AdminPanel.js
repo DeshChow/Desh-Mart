@@ -11,6 +11,7 @@ import orderhistory from '../../images/orderhistory.jpg'
 
 import './AdminPanel.css'
 import { getUserInfo } from '../../Utilities/SessionData';
+import swal from 'sweetalert';
 
 const AdminPanel = () => {
 
@@ -26,6 +27,8 @@ const AdminPanel = () => {
     if(getUserInfo().email!='outoftheboxdesh@gmail.com')
     {
         history.push('/home');
+
+        swal("Only Admin Access!");
     }
 
 

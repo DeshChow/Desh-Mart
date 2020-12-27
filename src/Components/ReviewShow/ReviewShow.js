@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import FootItem from '../FootItem/FootItem';
 import ReviewShowInner from '../ReviewShowInner/ReviewShowInner';
 import './ReviewShow.css';
 const ReviewShow = () => {
@@ -13,6 +14,8 @@ const ReviewShow = () => {
         .then(res=>res.json())
         .then(data=>
             {
+                data.reverse();
+
                 setReviews(data);
 
                 console.log(data);
@@ -34,6 +37,8 @@ const ReviewShow = () => {
             reviews.map(rv=><div className="col-md-3"><ReviewShowInner rv={rv}></ReviewShowInner></div>)
         
         }
+
+   <FootItem></FootItem>
         </div>
     );
 };

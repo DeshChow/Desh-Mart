@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { getUserInfo } from '../../Utilities/SessionData';
 import './InsertItem.css';
 import {AiFillTag} from "react-icons/ai";
+import swal from 'sweetalert';
 
 const InsertItem = () => {
 
@@ -13,6 +14,7 @@ const InsertItem = () => {
     if(getUserInfo().email!='outoftheboxdesh@gmail.com')
     {
         history.push('/home');
+        swal("Only Admin Access!");
     }
 
     const [info, setInfo] = useState({});
@@ -76,7 +78,7 @@ const InsertItem = () => {
             .then(data => {
                 console.log(data)
 
-                alert('succuessfully send');
+                swal("Inserted!", "Your Product Successfully Inserted!", "success");
             })
             .catch(error => {
                 console.error(error)

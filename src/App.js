@@ -26,6 +26,7 @@ import AdminPendingReview from './Components/AdminPendingReview/AdminPendingRevi
 import ReviewShow from './Components/ReviewShow/ReviewShow';
 import FootItem from './Components/FootItem/FootItem';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import NotFound from './Components/NotFound/NotFound';
 
 
 export const UserContext = createContext();
@@ -39,126 +40,132 @@ function App() {
   return (
 
     //<UserContext.Provider value={[userAction, setUserAction]}>
-      <Router>
+    <Router>
 
-        <NavBar></NavBar>
+      <NavBar></NavBar>
 
 
-        <Switch>
+      <Switch>
 
 
-          <Route exact path='/'>
+        <Route exact path='/'>
 
 
-            <Home></Home>
+          <Home></Home>
 
-          </Route>
+        </Route>
 
-          <Route path='/home'>
+        <Route path='/home'>
 
 
-            <Home></Home>
+          <Home></Home>
 
-          </Route>
-          <PrivateRoute path='/AdminPanel'>
+        </Route>
+        <PrivateRoute path='/AdminPanel'>
 
-            <AdminPanel></AdminPanel>
+          <AdminPanel></AdminPanel>
 
-          </PrivateRoute>
-          <PrivateRoute path='/AdminInsertItem'>
+        </PrivateRoute>
+        <PrivateRoute path='/AdminInsertItem'>
 
-            <InsertItem></InsertItem>
+          <InsertItem></InsertItem>
 
-          </PrivateRoute>
+        </PrivateRoute>
 
-          <PrivateRoute path='/AdminDeleteItem'>
+        <PrivateRoute path='/AdminDeleteItem'>
 
-            <DeleteItem></DeleteItem>
+          <DeleteItem></DeleteItem>
 
 
-          </PrivateRoute>
-          <PrivateRoute path='/AdminUpdateItem'>
+        </PrivateRoute>
+        <PrivateRoute path='/AdminUpdateItem'>
 
-            <UpdateItem></UpdateItem>
+          <UpdateItem></UpdateItem>
 
 
-          </PrivateRoute>
+        </PrivateRoute>
 
-          <Route path='/product/:_id/:category'>
+        <Route path='/product/:_id/:category'>
 
-            <SingleProductDetails></SingleProductDetails>
+          <SingleProductDetails></SingleProductDetails>
 
-          </Route>
-          
-          <Route path='/Details/:category'>
+        </Route>
 
-         
+        <Route path='/Details/:category'>
 
 
-              <Details></Details>
 
 
+          <Details></Details>
 
 
 
 
-          </Route>
 
 
+        </Route>
 
-          <Route path='/ReviewCart'>
 
-            <ReviewCart></ReviewCart>
 
+        <Route path='/ReviewCart'>
 
-          </Route>
-          <Route path='/DeshMart/Login'>
+          <ReviewCart></ReviewCart>
 
-            <Login></Login>
 
+        </Route>
+        <Route path='/DeshMart/Login'>
 
-          </Route>
-          <PrivateRoute path='/DeshMart/Checkout'>
+          <Login></Login>
 
-            <CheckOut></CheckOut>
 
-          </PrivateRoute>
+        </Route>
+        <PrivateRoute path='/DeshMart/Checkout'>
 
-          <PrivateRoute path='/AdminPendingOrder'>
+          <CheckOut></CheckOut>
 
-            <PendingOrder></PendingOrder>
+        </PrivateRoute>
 
-          </PrivateRoute>
+        <PrivateRoute path='/AdminPendingOrder'>
 
-          <PrivateRoute path='/AdminOrderHistory'>
+          <PendingOrder></PendingOrder>
 
+        </PrivateRoute>
 
-            <AdminOrderHistory></AdminOrderHistory>
-          </PrivateRoute>
+        <PrivateRoute path='/AdminOrderHistory'>
 
-          <PrivateRoute path='/AdminPendingReview'>
 
+          <AdminOrderHistory></AdminOrderHistory>
+        </PrivateRoute>
 
-           <AdminPendingReview></AdminPendingReview>
-          </PrivateRoute>
+        <PrivateRoute path='/AdminPendingReview'>
 
-          <Route path='/ReviewShow'>
 
+          <AdminPendingReview></AdminPendingReview>
+        </PrivateRoute>
 
-             <ReviewShow></ReviewShow>
-</Route>
+        <Route path='/ReviewShow'>
 
+          <ReviewShow></ReviewShow>
 
+        </Route>
 
-        </Switch>
+        <Route path='*'>
 
-       
-      </Router>
+          <NotFound></NotFound>
 
-    
+        </Route>
 
 
-  //  </UserContext.Provider>
+
+      </Switch>
+
+
+    </Router>
+
+
+
+
+    //  </UserContext.Provider>
 
   );
 }

@@ -4,6 +4,7 @@ import { getUserInfo } from '../../Utilities/SessionData';
 import {AiFillTag} from "react-icons/ai";
 
 import './DeleteItem.css';
+import swal from 'sweetalert';
 
 const DeleteItem = () => {
 
@@ -13,6 +14,7 @@ const DeleteItem = () => {
     if(getUserInfo().email!='outoftheboxdesh@gmail.com')
     {
         history.push('/home');
+        swal("Only Admin Access!");
     }
 
 
@@ -54,7 +56,8 @@ const DeleteItem = () => {
             .then(data => {
                 //console.log(data)
 
-                if(data)alert('succuessfully deleted');
+                if(data)
+                swal("Deleted!", "Your Product Successfully Deleted!", "success");
             })
             .catch(error => {
                 console.error(error)

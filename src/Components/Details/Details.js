@@ -7,6 +7,8 @@ import ProductItem from '../ProductItem/ProductItem';
 import { useParams } from 'react-router-dom';
 import FootItem from '../FootItem/FootItem';
 import SideItem from '../SideItem/SideItem';
+import Loader from 'react-loader-spinner';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Details = () => {
 
@@ -38,6 +40,8 @@ const Details = () => {
     }
     return (
 
+
+        isAvailable()?
         <>
 
        
@@ -71,7 +75,9 @@ const Details = () => {
 
         </div>
 
-        </>
+        </>:
+
+<Loader className='App' type="Oval" color="#149DF8" height={80} width={80} />
     );
 };
 

@@ -6,7 +6,7 @@ import orderback from '../../images/orderback.jpg';
 import {FcBusinessman} from "react-icons/fc";
 import {AiTwotoneMail} from "react-icons/ai";
 import {ImLocation2} from "react-icons/im";
-
+import swal from 'sweetalert';
 
 
 const SinglePendingOrder = ({ order, collection }) => {
@@ -30,11 +30,10 @@ const SinglePendingOrder = ({ order, collection }) => {
             .then(data => {
                 //console.log(data)
 
-                if (data) {
-                    window.location.reload(false);
-                    //     alert('succuessfully deleted from '+collection);
+               
 
-                }
+                if(data)
+                window.location.reload(false);
             })
             .catch(error => {
                 console.error(error)

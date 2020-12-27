@@ -12,6 +12,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import {AiFillTag} from "react-icons/ai";
 import {FaFacebook} from "react-icons/fa";
 import {FcGoogle} from "react-icons/fc";
+import swal from 'sweetalert';
+
 
 
 
@@ -55,17 +57,12 @@ const Login = () => {
     const LoginCheck=(email)=>
     {
 
-      console.log(email,typeof(email));
+      //console.log(email,typeof(email));
 
-        if(email=='outoftheboxdesh@gmail.com')
+        
       history.replace(from);
 
-        else 
-        { 
-          alert('Only Admin Access');
-
-          history.replace('/home');
-        }
+       
     }
 
   const handleGoogleSignIn = () => {
@@ -153,12 +150,12 @@ const Login = () => {
 
 
        if(!isPasswordValid && !passHasNumber)
-      alert('Your password should contain at least seven characters and one digit');
+      swal('Your password should contain at least seven characters and one digit');
        else if(isPasswordValid==false)
-       alert('Your password should contain at least seven characters');
+       swal('Your password should contain at least seven characters');
 
       else if(passHasNumber==false)
-      alert('Your password shoould contain minimum one digit');
+      swal('Your password shoould contain minimum one digit');
 
      
  
@@ -215,7 +212,7 @@ const Login = () => {
         })
         .catch((error) => {
  
-          alert('already have a account');
+          swal('already have a account');
 
 
  
@@ -246,7 +243,7 @@ const Login = () => {
       displayName: name,
  
     }).then(function () {
-       alert('You Are Successfully Registered');
+       swal("Congratulation!", "You Are Successfully Registered!", "success");
 
        ChangeSignInForm();
 
@@ -275,7 +272,7 @@ const Login = () => {
           
        if(loginUser.emailSignIn && loginUser.passwordSignIn)
        {
-           console.log('hamaisi sign in');
+          // console.log('hamaisi sign in');
 
 
            firebase.auth().signInWithEmailAndPassword(loginUser.emailSignIn,loginUser.passwordSignIn)
@@ -293,7 +290,7 @@ const Login = () => {
             })
             .catch(err=>
               {
-                alert(err);
+                swal(err);
               })
   
        }

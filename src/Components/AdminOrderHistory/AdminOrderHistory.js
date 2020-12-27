@@ -3,6 +3,7 @@ import SinglePendingOrder from '../SinglePendingOrder/SinglePendingOrder';
 import { useHistory } from 'react-router-dom';
 import { getUserInfo } from '../../Utilities/SessionData';
 import {AiFillTag} from "react-icons/ai";
+import swal from 'sweetalert';
 
 const AdminOrderHistory = () => {
 
@@ -11,6 +12,7 @@ const AdminOrderHistory = () => {
     if(getUserInfo().email!='outoftheboxdesh@gmail.com')
     {
         history.push('/home');
+        swal("Only Admin Access!");
     }
 
 
