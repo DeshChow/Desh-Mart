@@ -32,7 +32,7 @@ const OrderDetails = ({ order }) => {
             <div style={{fontSize: '22px',textAlign: "center"}}>
             <span><RiShoppingBagFill style={{color: 'orange',marginTop:'-5px'}}/><span style={{marginLeft: '5px'}}>Quantity : {quantity}</span></span>
 
-            <span style={{marginLeft:"250px"}}><RiMoneyPoundBoxFill style={{color: 'green',marginTop:'-5px'}}/><span style={{marginLeft: '5px'}}></span>Total Price : {price}</span>
+            <span style={{marginLeft:"250px"}}><RiMoneyPoundBoxFill style={{color: 'green',marginTop:'-5px'}}/><span style={{marginLeft: '5px'}}></span>Total Price : ${price}</span>
             </div>
 
             <button className="removebtn" onClick={RemoveItem}>Remove</button>

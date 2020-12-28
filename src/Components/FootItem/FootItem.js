@@ -50,7 +50,7 @@ const FootItem = () => {
 
                         <li><a onClick={()=>RouteChange('/Details/electronics')}>Electronics</a></li>
 
-                        <li> <a onClick={()=>RouteChange('/Details/computer')}>Computer Accessories</a></li>
+                        <li> <a onClick={()=>RouteChange('/Details/computer')}>Computer Zone</a></li>
 
                         
 
@@ -59,11 +59,11 @@ const FootItem = () => {
                 <li class="features" style={{marginTop:'-5px',marginLeft:'100px', fontSize: '18px', color: '#DDD8D8',cursor:'pointer'}}>
                         <br></br>
                         
-                        <li><a onClick={()=>RouteChange('/Details/light')}>Home Decor</a></li>
+                        <li><a onClick={()=>RouteChange('/Details/light')}>Light</a></li>
 
                         <li> <a onClick={()=>RouteChange('/Details/mensdress')}>Mens Zone</a></li>
 
-                        <li><a onClick={()=>RouteChange('/Details/medical')}>Medical</a></li>
+                        <li><a onClick={()=>RouteChange('/Details/medical')}>Health</a></li>
 
                         <li><a onClick={()=>RouteChange('/Details/laptab')}>Gadget</a></li>
 
@@ -74,7 +74,7 @@ const FootItem = () => {
                         
                 </li>
                 <li class="features" style={{marginTop:'-5px', fontSize: '18px', color: '#DDD8D8'}}>
-                    <b className="footh2" style={{marginLeft: '-30px'}}>Services</b>
+                    <b className="footh2" style={{marginLeft: '-30px',color: 'white'}}>Services</b>
                     <li style={{marginLeft: '-30px' }}><a style={{cursor:'pointer'}} onClick={()=>RouteChange('/ReviewShow')}>Reviews</a></li>
                     <li style={{marginLeft: '-30px'}}>Cash on Delivery</li>
                 </li>

@@ -10,7 +10,7 @@ const SideItem = () => {
                 <li>
                     <Link to="/Details/womensdress" className="textblack">
 
-                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Womens Dress</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Womens Zone</span>
 
                     </Link>
                 </li>
@@ -18,7 +18,7 @@ const SideItem = () => {
 
                     <Link to="/Details/beautypics" className="textblack">
 
-                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Beauty picks</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Beauty Picks</span>
 
                     </Link>
 
@@ -64,7 +64,7 @@ const SideItem = () => {
 
                     <Link to="/Details/computer" className="textblack">
 
-                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Computer</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Computer Zone</span>
 
                     </Link>
 
@@ -73,7 +73,7 @@ const SideItem = () => {
 
                     <Link to="/Details/mensdress" className="textblack">
 
-                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Mens Dress</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Mens Zone</span>
 
                     </Link>
 
@@ -82,7 +82,7 @@ const SideItem = () => {
 
                     <Link to="/Details/medical" className="textblack">
 
-                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Medical</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Health</span>
 
                     </Link>
 
@@ -109,7 +109,7 @@ const SideItem = () => {
 
                     <Link to="/Details/love" className="textblack">
 
-                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Love</span>
+                        <GiCheckMark style={{color: '#00B803', marginTop: '-2px'}}/><span>Gift Item</span>
 
                     </Link>
 

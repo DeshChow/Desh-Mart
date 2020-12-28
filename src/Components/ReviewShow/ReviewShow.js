@@ -27,10 +27,19 @@ const ReviewShow = () => {
 
     },[])
 
+    const isAvailable=()=>
+    {
+        if(reviews.length>0)return true;
+
+        else return false;
+    }
+
     
 
 
     return (
+
+      
         <div className=" row reviewsty">
         {
             
@@ -38,8 +47,9 @@ const ReviewShow = () => {
         
         }
 
-   <FootItem></FootItem>
         </div>
+
+  
     );
 };
 

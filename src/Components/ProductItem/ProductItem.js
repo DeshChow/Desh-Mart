@@ -16,15 +16,15 @@ const ProductItem = (props) => {
 
             </div>
 
-            <div className='product-line'>
+            <div className='product-line' style={{textAlign: 'justify'}}>
 
             <h4 className='product-name'><Link to={'/product/'+_id+'/'+category}>{name}</Link></h4><br/>
 
-            <h6> <b>Brand :</b> {brand}</h6>
+            <h6> <b>Brand<span  style={{paddingLeft:'30px'}}>:</span> </b> {brand}</h6>
 
-            <h6><b>Color :</b> {color}</h6>
+            <h6><b>Color <span  style={{paddingLeft:'30px'}}>:</span></b> {color}</h6>
 
-            <h6><b>Made In :</b> {madeIn}</h6><br/>
+            <h6><b>Made In <span  style={{paddingLeft:'10px'}}>:</span></b> {madeIn}</h6><br/>
 
             <p>Price : <span className='dollar'>{price}</span></p>
 
